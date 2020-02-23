@@ -1,0 +1,13 @@
+"uyeno"	"ad"	"cins"	"boy"	"kilo"	"sacrenk"	"mhal"
+"1"	10	"Gülcan"	"K"	160	68.5	"kumral"	"Evli"
+"2"	11	"Mahmut"	"E"	190	94.4	"siyah"	"Evli"
+"3"	12	"Nuran"	"K"	167	57.6	"sarı"	"Bekar"
+"4"	13	"Ozan"	"E"	174	76.1	"kızıl"	"Bekar"
+"5"	14	"Elda"	"K"	168	103.2	"siyah"	"Bekar"
+"6"	15	"Cevdet"	"E"	184	89.4	"siyah"	"Evli"
+"7"	16	"Zeydan"	"E"	175	75.4	"sarı"	"Evli"
+"8"	17	"Sarenur"	"K"	158	55.6	"siyah"	NA
+"9"	18	"Kayhan"	"E"	190	105.1	"sarı"	"Evli"
+"10"	21	"Seyhan"	"E"	180	85	"siyah"	"Evli"
+"11"	19	"Lale"	"K"	169	78.9	"kumral"	"Bekar"
+"12"	20	"Selin"	"K"	NA	63.8	"kızıl"	"Bekar"

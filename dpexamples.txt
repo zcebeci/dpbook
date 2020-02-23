@@ -1,0 +1,4356 @@
+# Örnek 3.1: R'de basit aritmetik işlemler
+3*5
+a <- 3
+b <- 5
+a*b
+x <- c(3, 2, 6, 8)
+sum(x)
+mean(x)
+
+# Örnek 3.2: Paketlerin kurulması
+install.packages()
+
+# Örnek 3.3: Belirli bir paketin kurulması
+install.packages("xlsx")
+
+# Örnek 3.4: Paket kurulumunda hata
+install.packages("xlsx")
+
+# Örnek 3.5: Kurulu paketlerin (R kütüphanesinin) listelenmesi
+library()
+
+# Örnek 3.6: Kurulu paketin R çalışma alanına yüklenmesi
+library(xlsx)
+
+# Örnek 3.7: Kurulu paketin R çalışma alanına yüklenmesi
+require(xlsx)
+
+# Örnek 3.8: Paketteki fonksiyonların çalıştırılması 1
+x <- read.xlsx("ornek1.xlsx", sheetIndex=1, header=TRUE)
+
+# Örnek 3.9: Paketteki fonksiyonların çalıştırılması 2
+x <- xlsx::read.xlsx("ornek1.xlsx", sheetIndex=1, header=TRUE)
+
+# Örnek 3.10: Çalışma alanındaki paketin kaldırılması
+detach(package:xlsx, unload=TRUE)
+
+# Örnek 3.11: R komutlarının çalıştırılması 
+x <- c(4, 5, 8, 10)
+y <- c(3, 2, 5, 8)
+xy <- x*y
+topxy <- sum(xy)
+print(topxy)
+
+# Örnek 3.12: R betiğini çalıştırma
+setwd("C:\\Rprogramlari")
+source("xycarpim.R")
+
+# Örnek 3.13: R betiğini çalıştırma 2
+setwd("D:\\Rprogramlari")
+source("xycarpim2.R")
+
+# Örnek 3.14: R betiğini çalıştırma 3
+setwd("D:\\Rprogramlari")
+source("xycarpim3.R")
+
+# Örnek 3.15: Kullanıcı tanımlı fonksiyonu çalıştırma 1
+x <- c(4, 5, 8, 10)
+y <- c(3, 2, 5, 8)
+xycarptop(x, y)
+
+# Örnek 3.16: Kullanıcı tanımlı fonksiyonu çalıştırma 2
+a <- c(4, 5, 8, 10)
+b <- c(3, 2, 5, 8)
+xycarptop(a, b)
+
+# Örnek 3.17: Kullanıcı tanımlı fonksiyonu çalıştırma 3
+a <- c(4, 5, 8, 10)
+b <- c(3, 2, 5, 8)
+xycarptop(x=a, y=b)
+
+# Örnek 3.18: Kullanıcı tanımlı fonksiyonu çalıştırma 3
+a <- c(4, 5, 8, 10)
+b <- c(3, 2, 5, 8)
+xycarptop(y=b, x=a)
+
+# Örnek 3.19: Kullanıcı tanımlı fonksiyonu çalıştırma 4
+a <- c(4, 5, 8, 10)
+b <- c(3, 2, 5, 8)
+xycarptop(x=a)
+xycarptop()
+
+# Örnek 3.20: Kullanıcı tanımlı fonksiyonu çalıştırma 5
+a <- c(2, 1, 1)
+b <- c(10, 4, 6)
+xycarptop(x=a, y=b)
+b <- c(1, 2, 3)
+xycarptop(x=a, y=b)
+
+# Örnek 3.21: Kullanıcı tanımlı fonksiyonu çalıştırma 6
+x <- c(4, 4) ; y <- c(3, 2)
+xyt <- xycarptop(x=x, y=y)
+print(xyt)
+
+# Örnek 3.22: Fonksiyon çıktılarını kullanma 1
+a <- c(4, 4)
+b <- c(3, 2)
+xyt <- xycarptop(x=a, y=b)
+sqrt(xyt)
+
+# Örnek 3.23: Fonksiyon çıktılarını kullanma 2
+a <- c(4, 4)
+b <- c(3, 2)
+sqrt(xycarptop(x=a, y=b))
+
+# Örnek 3.24: Fonksiyon çıktılarını kullanma 3
+a <- c(4, 4)
+b <- c(3, 2)
+lnxycpt <- log(sqrt(xycarptop(x=a, y=b)))
+print(lnxycpt)
+
+# Örnek 3.25: magrittr paketini kurma ve çalışma alanına yükleme
+install.packages("magrittr")
+library(magrittr)
+
+# Örnek 3.26: Fonksiyondan fonksiyona değer akıtma 1
+lnxycpt <- xycarptop(a,b) %>% sqrt %>% log
+
+# Örnek 3.27: Fonksiyondan fonksiyona değer akıtma 2
+lnxycpt <- log(sqrt(xycarptop(x=a, y=b)))
+
+# Örnek 3.28: R'den çıkma
+q()
+
+# Örnek 3.29: R'den çalışma alanını kaydederek çıkma 1
+q(save = "default", status = 0, runLast = TRUE)
+
+# Örnek 3.30: R'den çalışma alanını kaydederek çıkma 2
+savehistory(file = "xkumeleme.Rhistory") # kaydetme
+loadhistory(file = "xkumeleme.Rhistory") # geri yükleme
+
+# Örnek 3.31: Çalışma geçmişini görüntüleme
+history(max.show = 10, reverse = TRUE)
+
+# Örnek 3.32: Çalışma geçmişini görüntüleme
+ls()
+rm(x)
+ls()
+
+# Örnek 3.33: R'nin güncellenmesi
+if(!require(installr)) {
+   install.packages("installr");  require(installr)} 
+if(check.for.updates.R()){
+   install.R() ; 
+   copy.packages.between.libraries()}
+
+# BÖLÜM 4 ###########################################################
+
+# Örnek 4.1: Tamsayı sınırlarını öğrenme
+.Machine$integer.max
+
+# Örnek 4.2: Tamsayı tanımlama
+yas <- 21L
+hatakod <- 99L
+ogrno <- 2017360055L
+
+# Örnek 4.3: double tipinde sayı sınırlarını öğrenme
+.Machine$double.xmax
+
+# Örnek 4.4: double tipinde sayı tanımlama
+suph <- 8.2
+konstrasyon <- 2.38e-12
+karecarpim <- 3e+64
+yaricap <- 0.0005
+xort <- 129.567788
+
+# Örnek 4.5: Kompleks sayı tanımlama
+x <- complex(real = 2, imaginary = 1)
+x
+
+# Örnek 4.6: Karakter dizesi tanımlama
+mesaj <- "Merhaba" 
+mesaj
+d <- "Can"
+ad
+il <- 'Adana'
+il
+plaka <- "01WW999"
+plaka
+skod <- "T"
+skod
+ilkod <- "01"
+ilkod
+
+# Örnek 4.7: Karakter dizesini ham veriye dönüştürme
+mesaj <- charToRaw("Merhaba")
+mesaj
+il <- charToRaw("Adana")
+il
+
+# Örnek 4.8: Mantıksal veri tanımlama
+dosyaacik <- TRUE
+dosyaacik
+dosyaacik <- FALSE
+dosyaacik
+dosyasonu <- TRUE
+dosyasonu
+
+# Örnek 4.9: Vektör tanımlama
+cesit <- c("İnek","Keçi","Koyun", "Manda")
+cesit
+su <- c(87.3, 87.1, 82.9, 82.1)
+su
+protein <- c(3.4, 3.7, 5.4, 4.2)
+protein
+yag <- c(3.5, 4.1, 6.2, 7.9)
+yag
+laktoz <- c(4.8, 4.2, 4.3, 4.9)
+laktoz
+sisesut <- c(TRUE, FALSE, FALSE, TRUE)
+sisesut
+mineral <- c(0.75, 0.78, 0.85, 0.78)
+mineral
+
+# Örnek 4.10: Boş vektör tanımlama
+x <- c()
+x
+
+# Örnek 4.11: Vektör elemanlarına erişim
+protein
+protein[1]
+protein[3]
+protein[2:3]
+protein[5]
+
+# Örnek 4.12: Vektör elemanlarına erişim
+protein[0]
+
+# Örnek 4.13: Vektörün devriği
+protein
+t(protein)
+
+# Örnek 4.13: Veri çerçevesi oluşturma
+sutbilesen <- data.frame(cesit, protein, yag, laktoz, sisesut)
+sutbilesen
+
+# Örnek 4.14: Veri çerçevesine yeni sütun (değişken) ekleme 1
+sutbilesen$mineral  <- mineral
+sutbilesen
+
+# Örnek 4.15: Veri çerçevesine yeni sütun (değişken) ekleme 2
+sutbilesen <- sutbilesen[,-6] # daha önce ekleneni çıkar
+sutbilesen  <- cbind(sutbilesen, mineral)
+sutbilesen
+
+# Örnek 4.16: Veri çerçevesindeki değerlere erişim 1
+sutbilesen[3,2]
+
+# Örnek 4.17: Veri çerçevesindeki değerlere erişim 2
+sutbilesen[2,]
+
+# Örnek 4.18: Veri çerçevesindeki değerlere erişim 3
+sutbilesen[2:3,]
+
+# Örnek 4.19: Veri çerçevesindeki değerlere erişim 4
+sutbilesen[,5]
+
+# Örnek 4.20: Veri çerçevesindeki değerlere erişim 5
+sutbilesen[,4:6]
+sutbilesen[,c(1,3,6)]
+
+# Örnek 4.21: Veri çerçevesindeki değerlere erişim 6
+sutbilesen$cesit 
+sutbilesen$mineral
+
+# Örnek 4.22: Matris tanımlama 1
+m <- matrix(c(15,61,27,38,91,30), nrow=2, ncol=3)
+m
+
+# Örnek 4.23: Matris tanımlama 2
+m <- matrix(c(1), nrow=3, ncol=3)
+m
+
+# Örnek 4.24: Matris tanımlama 3
+m <- matrix(c(3,6,1,4), ncol=4, nrow=4)
+
+# Örnek 4.25: Matris tanımlama 4
+m <- matrix(c(15,26), ncol=3, nrow=3)
+m
+
+# Örnek 4.26: Matris tanımlama 5
+m1 <- matrix(c(8, 3, 9), ncol=3, nrow=3)
+m1
+m2 <- matrix(c(8, 3, 9), ncol=3, nrow=3, byrow=TRUE)
+m2
+
+# Örnek 4.27: Matris tanımlama 6
+harfmat <- matrix(c('A','B','C'), nrow=3, ncol=3)
+harfmat
+
+# Örnek 4.28: Matris tanımlama 7
+km1 <- matrix(c(1,'A',3,'B'), nrow=2, ncol=2, byrow=TRUE)
+km1
+km2 <- matrix(c(1,TRUE,3,FALSE,4,FALSE),nrow=3,ncol=2, byrow=TRUE)
+km2
+
+# Örnek 4.29: Matris elemanlarına erişim
+m <- matrix(c(5,6,7,8,9,10), nrow=3, ncol=2)
+m
+m[1,1]
+m[1,2]
+m[2,1]
+
+# Örnek 4.30: Liste tanımlama
+il <- "Adana"
+yillar <- c(2017, 2018)
+smuretim <- matrix(c(1.1, 1.3, 2.1, 2.5), ncol=2, nrow=2, byrow=T)
+adanatarim <- list(il, yillar, smuretim)
+adanatarim
+
+# Örnek 4.31: Liste elemanlarına erişim
+adanatarim[[1]]
+adanatarim[[2]]
+adanatarim[[3]]
+
+# Örnek 4.32: Liste elemanlarını matris olarak kullanma
+smuretim <- matrix(adanatarim[[3]], ncol=2,nrow=2)
+smuretim
+
+# Örnek 4.33: Liste elemanlarını kullanma
+adanatarim <- list(lokasyon = il, donem = yillar, uretim = smuretim)
+adanatarim
+
+# Örnek 4.34: Liste elemanlarının adlarını öğrenme
+names(adanatarim)
+
+# Örnek 4.35: Liste elemanlarına erişimde alternatifler
+adanatarim[[3]]
+adanatarim[["uretim"]]
+adanatarim$uretim
+
+# Örnek 4.36: Dizi tanımlama 1
+matdizi <- array(dim=c(3,2,2))
+matdizi
+
+# Örnek 4.37: Dizi tanımlama 2
+x <- c(3,4,2,9,4,5,6,12,3,2,1,6)
+matdizi <- array(x,dim=c(3,2,2))
+matdizi
+
+# Örnek 4.38: Dizi elemanlarına erişim 1
+matdizi[1,1,1]
+matdizi[2,2,1]
+matdizi[2,2,]
+matdizi[3,1,]
+matdizi[,1,2]
+matdizi[,2,1]
+matdizi[,1,]
+matdizi[,2,]
+
+# Örnek 4.39: Dizi elemanlarına erişim 2
+mat1 <- matdizi[,,1]
+mat1
+mat2 <- matdizi[,,2]
+mat2
+
+# Örnek 4.40: Faktör tanımlama 
+gubredoz <- c("N20","N30","N50",
+   "N20","N30","N50",
+   "N20","N30","N50")
+kirazverim <- c(90,118,140,90,113,137,75,105,144)
+gubredoz
+kirazverim
+
+# Örnek 4.41: Karakter dizesini faktöre dönüştürme 
+summary(kirazverim)
+summary(gubredoz)
+gubredoz1 <- factor(gubredoz)
+gubredoz1
+summary(gubredoz1)
+
+# Örnek 4.42: Faktör seviyelerini listeleme 
+levels(gubredoz1)
+
+# Örnek 4.43: Faktör seviyelerini sıralama (ordinal veri)
+gubredoz2 <- factor(gubredoz, levels=c("N20", "N30", "N50"), ordered=TRUE)
+gubredoz2
+
+# Örnek 4.44: Faktör seviyelerini sıralama (ordinal veri)
+gubredoz2 <- factor(gubredoz2, levels=rev(levels(gubredoz2)))
+gubredoz2
+
+# Örnek 4.45: Faktör seviyelerini sıralama
+gubredoz2 <- ordered(gubredoz1)
+gubredoz2
+
+# Örnek 4.46: Faktör seviyelerini yeniden kodlama
+gubredoznumeric <- c(1,1,1,2,2,2,3,3,3,0,4)
+dozkod <- c(N20 = 1, N30 = 2, N50 = 3)
+gubredoz <- factor(gubredoznumeric, levels=dozkod, labels=names(dozkod))
+gubredoz
+
+# Örnek 4.47: Veri kümesi yükleme
+attach(mtcars)
+
+# Örnek 4.48: Frekans tablosu oluşturma
+tablo1 <- table(cyl)
+tablo1
+tablo2 <- table(gear)
+tablo2
+
+# Örnek 4.49: Çapraz frekans tablosusu oluşturma
+tablo3 <- table(cyl, gear) 
+tablo3 
+
+# Örnek 4.50: Tablo satır ve sütun toplamlarını hesaplama
+margin.table(tablo3, 1) #Satır toplamları
+margin.table(tablo3, 2) # Sütun toplamları
+margin.table(tablo3)  # Genel toplam
+
+# Örnek 4.51: Mozaik grafiği
+mosaicplot(tablo3, 
+  main="Cyl-Gear Mozaik Grafiği",
+  xlab="Silindir sayısı", ylab="Vites sayısı",
+  col="gray", cex=1)
+
+# Örnek 4.52: Oransal frekanslar tablosu
+prop.table(tablo3) # Oransal frekanslar tablosu
+prop.table(tablo1, 1) # Satır seviye yüzdeleri
+prop.table(tablo1, 2) # Sütun seviye yüzdeleri
+
+# Örnek 4.53: Çok boyutlu frekans tablosu
+tablo4 <- table(cyl,gear, carb)
+ftable(tablo4) 
+
+# Örnek 4.54: Çapraz frekans tablosu
+tablo2 <- xtabs(~cyl+gear, data=mtcars)
+ftable(tablo2) 
+
+# Örnek 4.55: Çok boyutlu frekans tablosu
+tablo3 <- xtabs(~cyl+gear+carb, data=mtcars)
+ftable(tablo4) 
+
+# Örnek 4.56: SPSS benzeri tablolar oluşturma
+if(!require(gmodels)){
+  install.packages("gmodels"); library(gmodels)
+CrossTable(mtcars$cyl, mtcars$gear)
+
+# Örnek 4.57: Kayıp değerler
+x <- NA
+x 
+y <- c(1.2, 3.5, 4.1, NA, 2.6)
+y
+w <- c(TRUE, FALSE, NA, NA, TRUE)
+w
+f <- c("a", "b", NA, "e")
+f
+
+# Örnek 4.58: Sonsuz değer
+a <- 5
+b <- 0
+s <- a/b
+s
+a=-5
+s <- a/b
+s
+
+# Örnek 4.59: Sayı değil 
+s <- 0/0
+s
+
+# Örnek 4.60: Vektör elemanlarına ad verme
+x <- c(5,2,4,6)
+x
+names(x)
+xnames <- c("x1","x2","x3", "x4")
+names(x) <- xnames
+x
+names(x)
+
+# Örnek 4.61: Adlandırılmış vektör elemanları
+x[1]
+
+# Örnek 4.62: Adları kaldırma
+x <- unname(x)
+x
+
+# Örnek 4.63: Veri çerçevesinde adlar
+xdf <- data.frame(cbind(c("Adana","Mersin","Osmaniye", "Hatay"),
+ c(1.3, 0.98, 0.67, 1.2), c(4, 6, 2, 3)))
+xdf
+
+# Örnek 4.64: Veri çerçevesinde sütun adlarını listeleme 1
+names(xdf)
+
+# Örnek 4.65: Veri çerçevesinde sütun adlarını listeleme 2
+colnames(xdf)
+
+# Örnek 4.66: Veri çerçevesinde satır adlarını listeleme 1
+row.names(xdf)
+
+# Örnek 4.67: Veri çerçevesinde sütun ve satır adı listeleme 
+dimnames(xdf)
+
+# Örnek 4.68: Veri çerçevesinde sütun adlarını değiştirme 
+sutad <- c("il", "nufus", "distic") 
+colnames(xdf) <- sutad
+xdf
+
+# Örnek 4.69: Veri çerçevesinde satır adlarını değiştirme 
+satad <- paste0("İl.",1:nrow(xdf)) 
+rownames(xdf) <- satad
+xdf
+
+# Örnek 4.70: Veri çerçevesinde sütun ve satır adı değiştirme 
+dimnames(xdf) <- list(satad, sutad)
+xdf
+
+# Örnek 4.71: Dizilerde satır ve sütun adları
+gozlemler <-  sample(1:100, 24)
+sutad <- paste0("v",1:4)
+satad <- paste0("s",1:3)
+matad <- paste0("Matris",1:2)
+xarr <- array(gozlemler,dim = c(3,4,2),
+   dimnames = list(satad, sutad, matad))
+xarr
+dimnames(xarr)
+
+# Örnek 4.72: Öznitelikleri görüntüleme
+attributes(xdf)
+
+# Örnek 4.73: Belli bir nesnenin özniteliğini görüntüleme
+iller <- c("Adana", "Mersin", "Osmaniye")
+attributes(iller)
+
+# Örnek 4.74: Öznitelik tanımlama
+oznitiller <- list(bolge="Çukurova")
+attributes(iller) <- oznitiller
+iller
+attributes(iller)
+
+# Örnek 4.75: Öznitelik görüntüleme
+attr(iller, "bolge")
+
+# Örnek 4.76: Çok sayıda öznitelik tanımlama
+yuzolcum <- c(2,1,3)
+bolge <- list(bolge="Çukurova", yos=yuzolcum)
+oznitiller <- list(bolge="Çukurova", yos=yos)
+mostattributes(iller) <- oznitiller
+iller
+attributes(iller)
+
+# Örnek 4.77: Öznitelik silme
+attributes(iller) <- NULL
+attributes(iller)
+
+# Örnek 4.78: Kayıp değer sınaması
+x <- c("Adana", NA, "Mersin", "Hatay", NA)
+y <- c(34, 56, 48, NA, 43)
+z <- c("A", "B", "C", "D", "E")
+is.na(x)
+is.na(y)
+is.na(z)
+anyNA(x)
+anyNA(y)
+anyNA(z)
+
+# Örnek 4.79: Boyutları sorgulama
+w <- 12L
+length(w)
+x <- c(12, 4, 8, 3)
+length(x)
+length(h)
+y <- c(TRUE, FALSE, TRUE)
+length(z)
+z <- c(4+5i, 3.2+2i)
+length(z)
+l <- list(a=c(1,2,3), b=c("A", "B"), c=TRUE)
+length(l)
+
+# Örnek 4.80: Boyutları sorgulama 2
+i <- "A" 
+nchar(i)
+il <- "Adana"
+nchar(il)
+
+# Örnek 4.81: Örnek veri çerçevesi tanımlama 
+iller <- c("Adana", "Mersin", "Osmaniye")
+nufus <- c(1.3, 0.978, 0.62)
+xdf <- data.frame(iller, nufus)
+xdf
+
+# Örnek 4.82: Veri çerçevesi boyutlarını sorgulama 1
+dim(xdf)
+
+# Örnek 4.83: Veri çerçevesi boyutlarını sorgulama 2
+xdfboyut <- dim(xdf)
+xdfboyut[1]
+xdfboyut[2]
+
+# Örnek 4.84: Veri çerçevesi boyutlarını sorgulama 3
+nrow(xdf)
+ncol(xdf)
+
+# Örnek 4.85: Matris boyutlarını sorgulama 
+xmat <- matrix(rnorm(12), ncol=3, nrow=4)
+xmat
+dim(xmat)
+nrow(xmat)
+ncol(xmat)
+
+# Örnek 4.86: Dizi boyutlarını sorgulama 
+xarr <- array(dim=c(3,2,4))
+dim(xarr)
+
+# Örnek 4.87: Atomik veri yapısı 
+w <- 12L
+str(w)
+
+# Örnek 4.88: Veri çerçevesi yapısı 
+str(xdf)
+
+# Örnek 4.89: Matris yapısı 
+str(xmat)
+
+# Örnek 4.90: Dizi yapısı 
+str(xarr)
+
+# Örnek 4.91: Örnek veri çerçevesi oluşturma 
+set.seed(2023)
+xdf <- data.frame(a=round(rnorm(15, 50, 5)), 
+     b=round(rnorm(15, 10, 2)), c=round(rnorm(15, 100, 10)))
+xdf
+
+# Örnek 4.91: Örnek veri çerçevesi oluşturma 
+set.seed(2023)
+xdf <- data.frame(a=round(rnorm(15, 50, 5)), 
+     b=round(rnorm(15, 10, 2)), c=round(rnorm(15, 100, 10)))
+xdf
+
+# Örnek 4.93: head ve tail ile içerik listeleme 2
+head(xdf, 3)
+
+# Örnek 4.94a: Veri çerçevesinde düzenleme
+xdf <- edit(xdf)
+
+# Örnek 4.94b: Veri çerçevesinde düzenleme
+fix(xdf)
+
+# Örnek 4.95: Örnek değişken tanımlama
+onum <- c(1267L, 433L)
+onum
+typeof(onum)
+
+# Örnek 4.96: Zorlanım örneği
+onum[2] <- 2147483648L
+onum
+typeof(onum)
+
+# Örnek 4.97: Zorlanım örneği 2
+onum[1] <- "Ada"
+onum
+typeof(onum)
+
+# Örnek 4.98: Vektörü matrise dönüştürme
+m <- matrix(c(2,4,5,1,4,3),ncol=3, nrow=2)
+m
+v <- as.vector(m)
+v
+
+# Örnek 4.99: Vektörü listeye dönüştürme
+x <- as.list(x=v)
+x
+
+# Örnek 4.100: Örnek veri çerçevesi tanımlama
+df1 <- data.frame(x1=sample(1:10,4), x2=sample(1:100,4))
+df1
+
+# Örnek 4.101: Veri çerçevesini matrise dönüştürme
+mat1 <- as.matrix(df1)
+mat1
+
+# Örnek 4.102: Matrisi veri çerçevesine dönüştürme
+df2 <- as.data.frame(mat1)
+df2
+
+# Örnek 4.103: Örnek veri çerçevesi tanımlama
+df3 <- data.frame(f=letters[1:3], y=sample(1:100,3))
+df3
+
+# Örnek 4.104: Matrisi veri çerçevesine dönüştürme - Zorlama
+mat2 <- as.matrix(df3)
+mat2
+
+# Örnek 4.105: Matrisi veri çerçevesine dönüştürme - Zorlama
+armat1 <- as.array(mat1)
+armat1
+
+# Örnek 4.106:  Atama işleminde karışıklık
+x <- c(2, 5, 4)
+if (x[1]<-8) x
+x
+if (x[1]=9) x
+
+# Örnek 4.107:  Vektör tanımlama
+x <- c(3, 4, 2, 8)
+y <- c(1, 3, 3, 4)
+
+# Örnek 4.108:  Vektörle işlemler 1
+x+y
+x-y
+x*y
+x/y
+x%/%y   # Bölümün tamsayı kısmı
+x%%y    # Bölme sonucunda kalan değer
+
+# Örnek 4.109:  Vektörle işlemler 2
+tx <- t(x)
+t(x)
+tx*y   #Eleman çarpımları
+tx%*%y  #Vektörel çarpım
+
+# Örnek 4.110:  Vektörle işlemler 3
+sum(x)
+mean(x)
+
+# Örnek 4.111:  Matrislerle işlemler 1
+A <- matrix(c(3,3,4,9), nrow=2, ncol=2)
+A
+B <- matrix(c(1,2,3,1), nrow=2, ncol=2)
+B
+A+B
+A-B
+A*B
+A/B
+
+# Örnek 4.112:  Matrislerle işlemler 2
+tA <- t(A)
+tA
+tA*A   #Eleman çarpımı
+tA%*%A  #Matris formunda iç çarpım
+
+# Örnek 4.113:  Matrislerle işlemler 3
+A <- matrix(c(3,3,4,9,8,2,7,4,9), nrow=3, ncol=3)
+A
+detA<-det(A)
+detA
+invA<-solve(A)
+invA
+#Bir matrisin inversini almanın uzun yolu, adjoint matristen yaralanmaktır.
+minor <- function(A, i, j) det( A[-i,-j] )
+cofactor <- function(A, i, j) (-1)^(i+j) * minor(A,i,j)
+# Döngü kullanarak
+adjoint1 <- function(A) {
+   n <- nrow(A)
+   B <- matrix(NA, n, n)
+   for( i in 1:n )
+     for( j in 1:n )
+       B[j,i] <- cofactor(A, i, j)
+   B
+}
+adjoint1(A)
+inversA <- adjoint1(A)/detA
+inversA
+
+# Örnek 4.114:  Örnek vektör tanımlama
+iller <- c("Mersin", "Adana", "Osmaniye", "Hatay")
+nufus <- c(1793931, 2216475, 527724, 1575226)
+liman <- c(TRUE, TRUE, FALSE, TRUE)
+
+# Örnek 4.115:  Vektörlerin sıralanması
+sort(iller)
+sort(nufus)
+sort(liman)
+
+# Örnek 4.116:  Sıralama yönü tanımlama
+sort(iller, decreasing=TRUE)
+
+# Örnek 4.117:  Sıralama yöntemi tanımlama
+sort(iller, decreasing=TRUE, method="shell")
+
+# Örnek 4.118:  Sıralama yöntemi tanımlama
+x <- rnorm(1e+07, 50, 5)
+system.time(x1 <- sort(x, method = "radix"))
+system.time(x2 <- sort(x, method = "quick"))
+system.time(x3 <- sort(x, method = "shell"))
+
+# Örnek 4.119: mtcars veri çerçevesini çalışma alanına yükleme
+attach(mtcars)
+head(mtcars)
+
+# Örnek 4.120: mtcars verisi mpg'ye göre sıralama
+mtcars.s1 <- mtcars[order(mpg),]
+head(mtcars.s1)
+
+# Örnek 4.121: mtcars verisi mpg'ye göre azalan yönde sıralama 1
+mtcars.s2 <- mtcars[order(mpg, decreasing=TRUE),]
+head(mtcars.s2)
+
+# Örnek 4.123: mtcars verisi mpg'ye göre azalan yönde sıralama 2
+mtcars.s2 <- mtcars[order(-mpg),]
+
+# Örnek 4.124: mtcars verisi iki değişkenle sıralama 1
+mtcars.s3 <- mtcars[order(mpg, cyl),]
+head(mtcars.s3)
+
+# Örnek 4.125: mtcars verisi iki değişkenle sıralama 2
+mtcars.s4 <- mtcars[order(-mpg, cyl),method="shell"]
+head(mtcars.s4)
+
+# BÖLÜM 5 ############################################################
+
+# Örnek 5.1: R verisetleri listesi
+library(help = "datasets")
+
+# Örnek 5.2: npk veriseti tanıtım bilgisine erişim
+??datasets::npk
+
+# Örnek 5.3: npk verisetini yükleme ve görüntüleme
+data(npk)
+npk  # veya print(npk)
+
+# Örnek 5.4: npk verisetindeki yield değişkeni istatistikleri
+summary(npk$yield)
+
+# Örnek 5.5: npk verisetini yükleme ve değişkenleri kullanma
+attach(npk)
+summary(yield)
+
+# Örnek 5.6: npk verisetini çalışma alanından kaldırma
+detach(npk)
+
+# Örnek 5.7: Çalışma alanından tüm verisetlerini kaldırma
+detach()
+
+# Örnek 5.8: Örnek matris tanımlama
+x  <- matrix(c(30,76,60,24,5,4,3,5), nrow=4, ncol=2)
+x
+
+# Örnek 5.9: Matrisin satır ve sütunlara ad verme
+colnames(x) <- c("Patates","Sogan")
+rownames(x) <- LETTERS[1:4]
+x
+
+# Örnek 5.10: Kopyalanan metinden veri okuma
+gozlemler <- textConnection("
+ Patates Sogan
+ 30 5
+ 76 4
+ 60 3
+ 24 5
+ ")
+x <- read.table(gozlemler, header = TRUE) 
+close(gozlemler)
+x
+rownames(x) <- LETTERS[1:4]
+x
+
+# Örnek 5.11: Metin türü dosyadan veri okuma
+setwd("C:/dpbook")
+x <- read.table(file="volcu.txt", sep="\t", header=TRUE)
+
+# Örnek 5.12: Dosyadan okunan veriyi içeren veri çerçevesi
+x 
+
+# Örnek 5.13: readxl paketinin kurulması 
+install.packages("readxl")
+
+# Örnek 5.14: readxl paketinin çalışma alanına yüklenmesi
+library(readxl)
+
+# Örnek 5.15: Excel dosyasının okunması 1
+setwd("C:/dpbook")
+x <- read_excel("volcu.xlsx", sheet=1, col_names=TRUE)
+x
+
+# Örnek 5.16: Excel dosyasının okunması 2
+x <- read_xlsx("volcu.xlsx", sheet=1, col_names=TRUE)
+
+# Örnek 5.17: Excel dosyasının seçilerek okunması
+x <- read_excel(file.choose(), sheet=1, col_names=TRUE)
+x
+
+# Örnek 5.18: Diğer yazılımlardan veri dosyası ithali 1
+if(!require(foreign)){
+   install.packages("foreign"); library(foreign)}
+x <- read.spps(file="ornek.sav")
+
+# Örnek 5.19: Diğer yazılımlardan veri dosyası ithali 2
+if(!require(Hmisc)){install.packages("Hmisc"); library(Hmisc)}
+x <- sasxport.get("ornek.xpt")
+
+# Örnek 5.20: Uzaktan dosya okuma 1
+x <- read.table("http://www.stats.ox.ac.uk/pub/datasets/csb/ch11b.dat")
+head(x, 3)    # Verinin ilk 3 satırını göster
+
+# Örnek 5.21: Uzaktan dosya okuma 2
+x <- read.csv("http://lib.stat.cmu.edu/jcgs/tu", skip=4, header=T)
+head(x, 3)
+
+# Örnek 5.22: Uzaktan dosya okuma 3
+if(!require(RCurl)){
+   install.packages("RCurl"); library(RCurl)}
+read.table(textConnection(getURL(
+ "http://johndoe.com/data.txt",
+   userpwd = "kullanıcıadı:şifre")),
+   sep="\t", header=TRUE)
+
+# Örnek 5.23: sink ile dosyaya kayıt işlemi
+setwd("C:/dpbook")
+x <- read.table(file="volcu.txt", sep="\t", header=TRUE)
+sink(file="volcu.out") # Çıkış dosyasını aç
+cat("X veriseti\n")
+head(x)
+cat("\n Temel İstatistikler\n")
+tstat <- summary(x)
+tstat
+sink() # Dosyayı kapat
+
+# Örnek 5.24: sink ile dosyaya kayıt işlemi 2
+sink(file="volcu.out", append=TRUE)
+cat("\nBoy kareler toplamı\n")
+boytop <- sum(x[,1]^2)
+boytop
+sink()
+
+# Örnek 5.25: write.table ile dosyaya kayıt işlemi 1
+write.table(x, file="volcu2.txt", sep="\t")
+
+# Örnek 5.26: save ile .Rdata dosyasına kayıt
+tstat <- summary(x)
+tstat
+save(x, tstat, file="volcuanaliz.Rdata")
+
+# Örnek 5.27: load ile .Rdata dosyası okuma 
+load("volcuanaliz.Rdata")
+x
+tstat
+
+# BÖLÜM 7 ##########################################################
+
+# Örnek 7.1: read.table ile dosya okuma 1
+expdata <- read.table(file="trexport.txt", header=TRUE)
+expdata
+
+# Örnek 7.2: read.table ile dosya okuma 2 
+impdata <- read.table(file="trimport.txt", header=TRUE)
+impdata
+
+# Örnek 7.3: read.table ile dosya okuma 3
+popdata <- read.table(file="trnufus.txt", header=TRUE)
+popdata
+
+# Örnek 7.4: data.table kurma ve yükleme 
+if(!require(data.table)){
+   install.packages("data.table"); library(data.table)}
+
+# Örnek 7.5: Veri birleştirme 1
+expimpdata1 <- merge(x=expdata, y=impdata, by="il")
+expimpdata1
+
+# Örnek 7.6: Veri birleştirme 2
+expimpdata2 <- merge(expdata, impdata, by=c("il", "yil"))
+expimpdata2
+
+# Örnek 7.7: Veri birleştirme 3
+expimpdata3 <- merge(expdata, impdata, by=c("il", "yil"), all=TRUE)
+expimpdata3
+
+# Örnek 7.8: Veri birleştirme 4
+expimpdata4 <- merge(expdata, impdata, by=c("il", "yil"), all.x=TRUE)
+expimpdata4
+
+# Örnek 7.9: Veri birleştirme 5
+expimpdata5 <- merge(expdata, impdata, by=c("il", "yil"), all.y=TRUE)
+expimpdata5
+
+# Örnek 7.10: Veri birleştirme 6
+texpimpdata <- merge(expimpdata, popdata, by.x="il", by.y="vilayet", sort=TRUE, all=TRUE)
+texpimpdata
+
+# Örnek 7.11: Örnek veri çerçevesi oluşturma
+setwd("C:/dpbook")
+besper <- read.table(file="gca.txt", sep="\t", head=TRUE)
+head(besper)
+
+# Örnek 7.12: tidyr ve dplyr paketlerini kurma ve yükleme
+if(!require(tidyr)){
+   install.packages("tidyr"); library(tidyr)}
+if(!require(dplyr)){
+   install.packages("dplyr"); library(dplyr)}
+
+# Örnek 7.13: gather ile daraltma
+besper2 <- gather(data=besper, key=rasyon, value=gca, R1:R4)
+besper2
+
+# Örnek 7.14: spread ile genişletme
+besper3 <- spread(data=besper2, key=rasyon, value=gca)
+besper3
+
+# Örnek 7.15: Örnek veri dosyasını oku
+setwd("C:/dpbook")
+phgozlem
+
+# Örnek 7.16: Sütunları birleştirme
+phgozlem2 <- unite(phgozlem, bno, sno, pno, col=gozlemID, sep = "-")
+phgozlem2
+
+# Örnek 7.17: Sütundaki verileri ayırma
+phgozlem3 <- separate(data=phgozlem2, gozlemID, c("bno", "sno", "pno"), sep = "-")
+phgozlem3
+
+# Örnek 7.18: mtcars verisetini çalışma alanına yükleme
+data(mtcars)
+head(mtcars)
+
+# Örnek 7.19: mtcars verisetinden alt veriseti oluşturma
+mtcars1 <- mtcars[ ,c("mpg", "cyl", "hp")]
+head(mtcars1, 6)
+
+# Örnek 7.20: mtcars verisetinden alt veriseti oluşturma 2
+mtcars1 <- mtcars[ ,c(1, 2, 4)]
+
+# Örnek 7.21: mtcars verisetinden alt veriseti oluşturma 2
+mtcars1 <- mtcars[ ,c(1:2, 4)]
+
+# Örnek 7.22: mtcars verisetinden alt veriseti oluşturma 3
+mtcars2 <- mtcars[ ,c(-5,-6,-9)]
+head(mtcars2, 6)
+
+# Örnek 7.23: mtcars verisetinden alt veriseti oluşturma 4
+mtcars2 <- mtcars[ ,c(-5:-6,-9)]
+
+# Örnek 7.24: mtcars verisetinden alt veriseti oluşturma 5
+mtcars1 <- subset(mtcars, select = c(qsec, vs,  am, gear, carb))
+head(mtcars1, 5)
+
+# Örnek 7.25: mtcars verisetinden alt veriseti oluşturma 6
+mtcars2 <- subset(mtcars, select = -c(qsec, vs,  am, gear, carb))
+head(mtcars2)
+
+# Örnek 7.26: mtcars verisetinden alt veriseti oluşturma 7
+mtcars3 <- subset(mtcars, cyl==4)
+head(mtcars3)
+
+# Örnek 7.27: mtcars verisetinden alt veriseti oluşturma 8
+mtcars3 <- subset(mtcars, cyl==4, select=c(-cyl))
+head(mtcars3)
+
+# Örnek 7.28: mtcars verisetinden alt veriseti oluşturma 9
+mtcars4 <- subset(mtcars, cyl==4 & hp>=70, select=c(-cyl))
+head(mtcars4)
+
+# Örnek 7.29: mtcars verisetinden alt veriseti oluşturma 10
+mtcars5 <- subset(mtcars, cyl==4 & hp>=70, select=c(mpg, hp, wt, qsec))
+head(mtcars5)
+
+# Örnek 7.30: mtcars verisetinden alt veriseti oluşturma 11
+mtcars5 <- subset(mtcars, cyl==4 & hp>=70, select=c(1, 3, 5:6))
+head(mtcars5)
+
+# Örnek 7.31: by ile grup istatistikleri 1
+by(mtcars$hp, mtcars$cyl, mean)
+
+# Örnek 7.32: by ile grup istatistikleri 2
+by(mtcars$hp, mtcars$cyl, length)
+
+# Örnek 7.33: aggregate ile frekans tablosu
+aggregate(mtcars$hp, by=list(clycat=mtcars$cyl), FUN=length)
+
+# Örnek 7.34: dplyr paketini kurma ve yükleme
+if(!require(dplyr)){
+   install.packages("dplyr"); library(dplyr)}
+
+# Örnek 7.35: select ile seçerek yeni alt veriseti oluşturma 1
+eximpdata21 <- select(expimpdata2, il, yil, ihracat)
+eximpdata21
+
+# Örnek 7.36: select ile seçerek yeni alt veriseti oluşturma 2
+expimpdata22 <- select(expimpdata2, starts_with("i"))
+head(expimpdata22)
+tail(expimpdata22)
+
+# Örnek 7.37: select ile seçerek yeni alt veriseti oluşturma 3
+expimpdata23 <- select(expimpdata2, ends_with("at"))
+head(expimpdata23)
+
+# Örnek 7.38: select ile seçerek yeni alt veriseti oluşturma 4
+expimpdata24 <- select(expimpdata2, il, ends_with("at"))
+head(expimpdata24)
+
+# Örnek 7.39: select ile seçerek yeni alt veriseti oluşturma 5
+expimpdata25 <- select(expimpdata2, il, starts_with("y"), ends_with("at"))
+head(expimpdata25)
+
+# Örnek 7.40: select ile seçerek yeni alt veriseti oluşturma 6
+expimpdata24 <- select(expimpdata2, il, ends_with("l"), ends_with("at"))
+head(expimpdata24)
+
+# Örnek 7.41: filter ile seçerek yeni alt veriseti oluşturma 1
+adaexpimp <- filter(expimpdata2, il=="Adana")
+adaexpimp
+
+# Örnek 7.42: filter ile seçerek yeni alt veriseti oluşturma 2
+exp2017m <- filter(expimpdata2, yil==2017 & ihracat >= 5000000)
+exp2017m
+
+# Örnek 7.43: group_by ile gruplandırma
+ilgrup <- group_by(expimpdata2, il)
+ilgrup
+
+# Örnek 7.44: summarize ile açıklayıcı istatistikler
+summarize(expimpdata2,
+    N = n(), 
+    Minimum = min(ihracat, na.rm=TRUE),
+    Ortanca = median(ihracat, na.rm=TRUE),
+    Ortalama = mean(ihracat, na.rm=TRUE),
+    Maksimum = max(ihracat, na.rm=TRUE),
+    Varyans = var(ihracat, na.rm=TRUE),
+    Std.Sapma = sd(ihracat, na.rm=TRUE)
+)
+
+# Örnek 7.45: summarize ile açıklayıcı istatistikler
+ilgrup <- group_by(expimpdata2, il)
+sonuc <- summarize(ilgrup, 
+    N = n(), 
+    Ort.İhracat = mean(ihracat, na.rm=TRUE),
+    Ort.İthalat = mean(ithalat, na.rm=TRUE)
+)
+
+# Örnek 7.46: summarize ile açıklayıcı istatistikler
+sonuc
+
+# Örnek 7.47: arrange ile açıklayıcı istatistikler 1
+ilgrup <- group_by(expimpdata2, il)
+tstat <- summarize(ilgrup, 
+     ort.ihracat = mean(ihracat, na.rm=TRUE),
+     ort.ithalat = mean(ithalat, na.rm=TRUE))
+arrange(tstat, ort.ihracat)
+
+# Örnek 7.48: arrange ile açıklayıcı istatistikler 2
+ilgrup <- group_by(expimpdata2, il)
+tstat <- summarize(ilgrup, 
+    ort.ihracat = mean(ihracat, na.rm=TRUE),
+    ort.ithalat = mean(ithalat, na.rm=TRUE))
+arrange(tstat, desc(ort.ihracat))
+
+# Örnek 7.49: arrange ile açıklayıcı istatistikler 3
+yilgrup <- group_by(expimpdata2, yil)
+tstat2 <- summarize(yilgrup, 
+     ort.ihracat = mean(ihracat, na.rm=TRUE),
+     ort.ithalat = mean(ithalat, na.rm=TRUE))
+arrange(tstat2, desc(ort.ihracat))
+
+# Örnek 7.50: full_join ile veri bütünleştirme
+expimp1 <- full_join(expdata, impdata, by="il")
+expimp1
+
+# Örnek 7.51: inner_join ile veri bütünleştirme
+expimp2 <- inner_join(expdata, impdata, by="il")
+expimp2
+
+# Örnek 7.52: left_join ile veri bütünleştirme
+expimp3 <- left_join(expdata, impdata, by="il")
+expimp3
+
+# Örnek 7.53: right_join ile veri bütünleştirme
+expimp4 <- right_join(expdata, impdata, by="il")
+expimp4
+
+# Örnek 7.54: filter ve mutate ile veri bütünleştirme
+expimp5 <- filter(expimp1, yil.x == 2017 & yil.y == 2017)
+expimp5 <- mutate(expimp5, eiratio = ihracat/ithalat)
+expimp5
+
+# Örnek 7.55: arrange ve mutate ile veri bütünleştirme
+expimp6 <- arrange(expimp5, desc(eiratio))
+expimp6 <- mutate(expimp6, sira = 1:length(eiratio))
+expimp6
+
+# Örnek 7.56: filter, arrange ve mutate ile veri bütünleştirme
+expimp7 <- filter(expdata, yil == 2017)
+expimp7 <- arrange(expimp7, desc(ihracat))
+expimp7 <- mutate(expimp7, yihracat = ihracat/sum(ihracat), kyihracat = cumsum(yihracat))
+expimp7 <- select(expimp7, -ihracat, -yil)
+expimp7
+
+# BÖLÜM 8 #########################################################################
+
+# Örnek 8.1: Örnek veri dosyasının (uyeler.txt) okunması
+setwd("C:/dpbook")
+uyeler <- read.delim("uyeler.txt", header=TRUE)
+
+# Örnek 8.2: Örnek veri dosyasının yapısını inceleme
+str(uyeler)
+
+# Örnek 8.3: Örnek veri çerçevesini görüntüleme  
+uyeler
+
+# Örnek 8.4: Veri türü  kontrolü 1  
+is.numeric(uyeler$ad)
+is.numeric(uyeler$kilo)
+
+# Örnek 8.5: Veri türü  kontrolü 2  
+is.factor(uyeler$ad)
+is.factor(uyeler$kilo)
+
+# Örnek 8.6: Değer aralığının kontrolü 1
+uyeler$boy >= 150 & uyeler$boy <= 250
+
+# Örnek 8.7: Değer aralığının kontrolü 2  
+which(uyeler$boy >= 150 & uyeler$boy <= 250)
+
+# Örnek 8.8: Değer aralığının kontrolü 3  
+hkno <- which(!(uyeler$boy >= 150 & uyeler$boy <= 250))
+hkno
+
+# Örnek 8.9: Değer aralığının kontrolü 4  
+uyeler[hkno,]
+
+# Örnek 8.10: Değer düzeltme
+uyeler[2, 4] <- 190
+uyeler
+
+# Örnek 8.11: Değer aralığının kontrolü 5
+which(!(uyeler$boy >= 150 & uyeler$boy <= 250))
+
+# Örnek 8.12: Üyelik kontrolü 1
+is.element(uyeler$cins, c("K","E"))
+
+# Örnek 8.13: Üyelik kontrolü 2
+uyeler$cins %in% c("E","K")
+
+# Örnek 8.14: Üyelik kontrolü 3
+uyeler$boy %in% 150:250
+
+# Örnek 8.15: Seviye sayısı kontrolü 1
+nlevels(uyeler$cins)
+
+# Örnek 8.16: Seviye ihlallerinin saptanması 1
+which(uyeler$cins!="K" & uyeler$cins != "E")
+
+# Örnek 8.17: Seviye ihlallerinin saptanması 2
+uyeler[3:4,]
+
+# Örnek 8.18: Teklik kontrolü 1
+duplicated(uyeler$uyeno)
+
+# Örnek 8.19: Teklik kontrolü 2
+length(unique(uyeler$uyeno)) == length(uyeler$uyeno)
+
+# Örnek 8.20: Kayıp değer kontrolü 1
+is.na(uyeler$boy)
+
+# Örnek 8.21: Kayıp değer kontrolü 2
+is.na(uyeler$ad)
+
+# Örnek 8.22: Varlık kontrolü 
+is.null(uyeler$mhal)
+is.null(uyeler$yas)
+
+# Örnek 8.23: dataQualityR paketinin kurulması ve yüklenmesi 
+if(!require(dataQualityR)){
+   install.packages("dataQualityR"); library(dataQualityR)}
+
+# Örnek 8.24: dataQualityR ile kalite kontrolü 1
+say.kontrol <- paste(tempdir(), "/dq_num.csv", sep= "")
+kat.kontrol <- paste(tempdir(), "/dq_cat.csv", sep= "")
+
+# Örnek 8.25: dataQualityR ile kalite kontrolü 2
+checkDataQuality(data=uyeler, out.file.num=say.kontrol,
+     out.file.cat= kat.kontrol)
+
+# Örnek 8.28: funModeling paketini kurma ve yükleme
+if(!require(funModeling)){
+   install.packages("funModeling"); library(funModeling)}
+
+# Örnek 8.29: funModeling paketini kurma ve yükleme
+#uyeler <- read.delim("uyeler.txt", header=TRUE)
+df_status(uyeler)
+
+# Örnek 8.30: Veri çerçevesi kontrol özeti
+describe(uyeler)
+
+# Örnek 8.31: Frekansların saptanması
+freq(uyeler)
+
+# Örnek 8.32: Sayısal değişkenlere ait istatistikler
+profiling_num(uyeler)
+
+# Örnek 8.33: datacheck paketinin kurulması ve yüklenmesi
+if(!require(datacheck)){
+   install.packages("datacheck"); library(datacheck)}
+
+# Örnek 8.34: xtable paketinin kurulması ve yüklenmesi
+if(!require(xtable)){
+   install.packages("xtable"); library(xtable)}
+options(xtable.type="html")
+
+# Örnek 8.35: Örnek veri (uyeler.txt) dosyasını okunması
+uyetablo <- read.delim("uyeler.txt",
+   header = TRUE, stringsAsFactors = FALSE)
+uyekurallar <- read_rules("kurallar.R")
+
+# Örnek 8.37: Kuralların kontrol edilmesi
+uyeprofil <- datadict_profile(uyetablo, uyekurallar)
+
+# Örnek 8.38: Kuralların kontrol edilmesi
+uyeprofil$data
+
+# Örnek 8.39: Tablonun HTML formatında elde edilmesi
+xtable(uyeprofil$data)
+
+# Örnek 8.40: Tablonun HTML dosyasına kaydedilmesi
+sink("uyedata.html")
+xtable(uyeprofil$data)
+sink()
+
+# Örnek 8.41: Kontrol işleminin HTML dosyasına kaydedilmesi
+sink("uyekontrol.html")
+xtable(uyeprofil$checks)
+sink()
+
+# Örnek 8.42: Kontrol işleminin HTML dosyasına kaydedilmesi
+sink("uyeskor.html")
+xtable(uyeprofil$scores)
+sink()
+
+# Örnek 8.43: Kontrol işleminin HTML dosyasına kaydedilmesi
+rule_coverage(uyeprofil)
+
+# Örnek 8.44: Kontrol işleminin HTML dosyasına kaydedilmesi
+score_sum(uyeprofil)
+
+# Örnek 8.45: Kontrol skorlarının ısı haritası
+heatmap(as.matrix(uyeprofil$scores[1:12,1:6]),
+   col=terrain.colors(20))
+
+# Örnek 8.46: Kontrol skorlarının ısı haritası 2
+uyeskor <- uyeprofil$scores
+mskor <- max(uyeskor$Record.score[1:(nrow(uyeskor)-2)])
+heatmap_quality(uyeprofil, scoreMax = mskor, col=topo.colors(mskor))
+
+# Örnek 8.47: Kontrol sonuçlarının özetlenmesi
+uyeozet <- short_summary(uyetablo)
+sink("uyeozet.html")
+xtable(uyeozet)
+sink()
+
+# Örnek 8.48: Yeni kural ekleme
+ekkural <- c("mhal", "character", "nchar(mhal) >= 2 & nchar(mhal) <=8", "None") 
+uyekurallar <- rbind(uyekurallar, ekkural)
+uyekurallar
+
+# Örnek 8.49: Kural silme
+uyekurallar <- uyekurallar[-3,]
+uyekurallar
+
+# Örnek 8.40: Kural silme
+uyekurallar$Variable[21] <- "ad"
+uyekurallar$Rule[21] <- " nchar(ad) >= 3 & nchar(mhal)<=15"
+
+# Örnek 8.41: kurallar2.R dosyası içeriği
+!duplicated(uyeno)
+is.integer(uyeno)
+is_within_range(uyeno, 1, 10000)
+is.character(ad)
+is_proper_name(ad)
+nchar(ad) >=3 & nchar(ad) <=20
+cins %in% c("E", "K")
+is.character(cins)
+is.integer(boy)
+is_within_range(boy, 150, 250)
+is.numeric(kilo)
+is_within_range(kilo, 50, 150)
+is.character(sacrenk)
+sacrenk %in% c("kumral", "siyah", "sarı", "kızıl", "ak")
+is.character(mhal)
+is_proper_name(mhal)
+mhal %in% c("Evli", "Bekar", "Boşanmış")
+nchar(mhal) >=2 & nchar(mhal) <=8
+
+# Örnek 8.42: Örnek kurallar ve veri dosyasının okunması
+if(!require(datacheck)){
+   install.packages("datacheck"); library(datacheck)}
+if(!require(xtable)){
+   install.packages("xtable"); library(xtable)}
+setwd("C:/dpbook")
+uyetablo <- read.delim("uyeler.txt",
+    header = TRUE, stringsAsFactors = FALSE)
+uyekurallar <- read_rules("kurallar2.R")
+uyeprofil <- datadict_profile(uyetablo, uyekurallar)
+
+# Örnek 8.43: Örnek kurallar ve veri dosyasının okunması
+sink("uyedata.html")
+xtable(uyeprofil$data)
+sink()
+
+# Örnek 8.44: Kontrol sonuçlarına HTML dosyasına yönlendirme
+sink("uyekontrol.html")
+xtable(uyeprofil$checks)
+sink()
+
+# Örnek 8.45: Yanlış verinin düzeltilmesi 1
+uyetablo$uyeno[10] <- 21
+
+# Örnek 8.46: Yanlış verinin düzeltilmesi 2
+uyetablo[10, 1] <- 21
+
+# Örnek 8.47: Yanlış verinin düzeltilmesi 3
+uyetablo$ad[11] <- "Lale"
+uyetablo[11, 2] <- "Lale"
+
+# Örnek 8.48: Yanlış verinin düzeltilmesi 4
+uyetablo[3, 3] <- "K"
+uyetablo[4, 3] <- "E"
+
+# Örnek 8.49: Yanlış verinin düzeltilmesi 5
+uyetablo[2, 4] <- 190
+
+# Örnek 8.50: Yanlış verinin düzeltilmesi 6
+uyetablo[6, 5] <- 89.40
+uyetablo[12,5] <- 63.80
+
+# Örnek 8.51: Yanlış verinin düzeltilmesi 7
+uyetablo[7,6] <- "sarı"
+uyetablo[8,6] <- "siyah"
+
+# Örnek 8.51: Yanlış verinin düzeltilmesi 8
+uyetablo[7,7] <- "Evli"
+uyetablo[8,7] <- NA
+
+# Örnek 8.52: Yanlış verinin düzeltilmesi 9
+uyetablo[4,7] <- "Bekar"
+
+# Örnek 8.53: Düzeltilmiş verinin görüntülenmesi
+uyetablo
+
+# Örnek 8.54: Düzeltilmiş verinin dosyaya kaydedilmesi
+setwd("C:/dpbook")
+write.table(uyetablo, file="dzuyeler.txt", sep="\t", col.names=TRUE)
+
+# Örnek 8.55: Yanlış verinin düzeltilmesi 10
+uyetablo[3, 3] <- "K"
+
+# Örnek 8.56: Yanlış verinin düzeltilmesi 11
+uyetablo[11, 2] <- "Lale"
+
+# Örnek 8.57: Yanlış verinin düzeltilmesi 12
+uyetablo[12,5] <- 63.80
+
+# Örnek 8.58: Yanlış verinin düzeltilmesi 13
+uyetablo[3, 3] <- "K"
+
+# Örnek 8.59: Yanlış verinin düzeltilmesi 14
+uyetablo[12,5] <- 63.80
+
+# Örnek 8.60: Sayısal verinin tahmin edilmesinde regresyon
+tamuyetablo <- uyetablo[which(uyetablo$kilo >=50 & uyetablo$kilo <= 150),]
+regmodel <- lm(kilo ~ boy, data=tamuyetablo, na.action=na.exclude)
+regsonuc <- summary(regmodel)
+
+# Örnek 8.61a: Regresyon tahmin eşitliğinde katsayılar 1
+coefficients(regsonuc)
+
+# Örnek 8.61b: Regresyon tahmin eşitliğinde katsayılar 2
+a <- coefficients(regsonuc)[1]
+b <- coefficients(regsonuc)[2]
+
+# Örnek 8.62: Regresyon tahmin eşitliği ile tahmin
+kilothmn <- a + b * 169
+kilothmn
+
+# Örnek 8.63: Regresyon tahmin eşitliğinde katsayılar ve tahmin
+a <- coefficients(regsonuc)[1]
+b <- coefficients(regsonuc)[2]
+ttrszkilo <- uyetablo[-which(uyetablo$kilo >=50 & uyetablo$kilo <= 150),]
+uyetablo[ttrszkilo,5] <- a + b * uyetablo[ttrszkilo,4] 
+
+# BÖLÜM 9 #################################################################
+
+# Örnek 9.1: Örnek veri dosyasının okunması
+setwd("C:/dpbook")
+xdt <- read.table("kdornek1.txt", head=T)
+
+# Örnek 9.2: Kayıp değer kontrolü
+anyNA(xdt)
+
+# Örnek 9.3: Kayıp değer sayımı
+sapply(xdt, function(x) sum(is.na(x)))
+
+# Örnek 9.4: x alt verisetini oluşturma
+x <- xdt[,3:4]
+x
+
+# Örnek 9.5: x verisetinde kayıp değerlerin sorgulanması
+is.na(x) 
+
+# Örnek 9.6: x verisetinde tam gözlemlerin sorgulanması
+complete.cases(x)
+
+# Örnek 9.7: x verisetinde tam gözlemlerin sorgulanması
+x[complete.cases(x),]
+
+# Örnek 9.8: x verisetinde kayıp gözlemlerin sorgulanması
+x[!complete.cases(x),]
+
+# Örnek 9.9: x verisetinde kayıp gözlemlerin sorgulanması
+setwd("C:/dpbook")
+xdt <- read.table("kdornek2.txt", sep="\t", header=TRUE)
+
+# Örnek 9.10: xdt verisetinde kayıp gözlemlerin sorgulanması
+sapply(xdt, function(x) sum(is.na(x)))
+
+# Örnek 9.11: xdt verisetinden alt veriseti oluşturma
+x <- xdt[,3:4]
+x
+
+# Örnek 9.12: x verisetinde kayıp değer sorgulama
+is.na(x)
+
+# Örnek 9.13: x verisetinde kayıp gözlem numarasını saptama
+which(is.na(x)) 
+
+# Örnek 9.14: x verisetinde kayıp gözlem satırlarını saptama
+unique(unlist(lapply(x, function(y) which(is.na(y)))))
+
+# Örnek 9.15: x verisetinde kayıp gözlem oranını saptama
+kdy <- function(x){sum(is.na(x))/length(x)*100}
+apply(x,1,kdy)
+apply(x,2,kdy)
+
+# Örnek 9.16: x verisetinde kayıp gözlem oranını saptama
+setwd("C:/dpbook")
+xdt <- read.table("kdornek3.txt", sep="\t", header=TRUE)
+x <- xdt[,3:4]
+x
+
+# Örnek 9.17: Kayıp değerleri NA olarak güncelleme
+x[x=="*"] <- NA
+x
+which(is.na(x)) 
+
+# Örnek 9.18: x veriseti sütunlarını sayısala çevirme
+x[,1] <- as.numeric(x[,1])
+x[,2] <- as.numeric(x[,2])
+x
+
+# Örnek 9.19: Kayıp değerli veri dosyası okuma
+setwd("C:/dpbook")
+xdt <- read.table("kdornek3.txt", sep="\t", na.strings="*", header=T)
+x <- xdt[,3:4]
+x
+
+# Örnek 9.20: Kayıp değerli veri dosyası okuma
+xdt <- read.table("kdornek2.txt", head=T, sep="\t")
+x <- xdt[, 3:4]
+x
+
+# Örnek 9.21: Kayıp değerli verilerle işlem yapma
+mean(x$x2) 
+mean(x$x2, na.rm=TRUE)
+
+# Örnek 9.22: Kayıp değerli verileri temizleme
+x1 <- na.omit(x)
+x1
+
+# Örnek 9.23: Kayıp değerli verilerle işlem
+cov(x)
+xcovmat <- cov(x1)
+xcovmat
+
+# Örnek 9.24: Kayıp değerli verilerle işlem
+xcovmat <- cov(x, use="complete.obs")
+xcovmat
+
+# Örnek 9.25: Kayıp değerli verilerle işlem
+xcovmat <- cov(x, use="pairwise.complete.obs")
+xcovmat
+
+# Örnek 9.26: Kayıp değerli verilerle işlem
+lm(y ~ x1 + x2, data=x, na.action=na.omit)
+
+# Örnek 9.27: Kayıp değerlerin ortalama ile tamamlanması
+ximport <- x
+ximport$x1[is.na(x$x1)] <- mean(x$x1, na.rm = T)
+ximport$x2[is.na(x$x2)] <- mean(x$x2, na.rm = T)
+ximport
+
+# Örnek 9.28: imputeTS paketinin kurulması ve yüklenmesi
+if(!require(imputeTS)){
+   install.packages("imputeTS"); library(imputeTS)}
+
+# Örnek 9.29: imputeTS ile kayıp değer tamamlama 1
+ximport <- na.mean(x, option = "mean")
+ximport
+
+# Örnek 9.30: imputeTS ile kayıp değer tamamlama 2
+ximpmed <- na.mean(x, option = "median")
+ximpmed
+
+# Örnek 9.31: imputeTS ile kayıp değer tamamlama 3
+ximpmod <- na.mean(x, option = "mode")
+ximpmod
+
+# Örnek 9.32: Hmisc ile kayıp değer tamamlama 1
+if(!require(Hmisc)){
+  install.packages("Hmisc"); library(Hmisc)}
+impute(x$x1, mean)  
+
+# Örnek 9.33: Hmisc ile kayıp değer tamamlama 2
+impute(x$x1, 9.5) 
+
+# Örnek 9.34: Hmisc ile kayıp değer tamamlama 3
+x1imp <- impute(x$x1, median) 
+x2imp <- impute(x$x2, median) 
+ximpmed <- data.frame(x1imp, x2imp)
+ximpmed
+
+# Örnek 9.35: mice paketinin kurulması ve yüklenmesi
+if(!require(mice)){
+  install.packages("mice"); library(mice)}
+
+# Örnek 9.36: Kayıp veri deseninin görüntülenmesi
+md.pattern(x)
+
+# Örnek 9.37: VIM paketinin kurulması ve yüklenmesi
+if(!require(VIM)){
+   install.packages("VIM"); library(VIM)}
+
+# Örnek 9.38: VIM paketi ile kayıp değer inceleme
+aggr(x, col=c("dodgerblue", "orange"), 
+    numbers=TRUE, sortVars=TRUE, labels=names(x),
+    cex.axis=.7, gap=3, 
+    ylab=c("X kayıp değer histogramı","Örüntü"))
+
+# Örnek 9.39: VIM paketi ile kayıp değer marjin grafiği
+if(!require(VIM)){
+   install.packages("VIM"); library(VIM)}
+marginplot(x)
+
+# Örnek 9.40: mice ile kayıp değer imputasyonu
+set.seed(1923)
+ximp <- mice(x, m=5, meth="pmm", maxit=10)
+
+# Örnek 9.41: mice ile kayıp değer imputasyon sonuçları
+summary(ximp)
+
+# Örnek 9.42: mice ile kayıp değer imputasyon yöntemleri listesi
+methods(mice)
+
+# Örnek 9.43: mice ile imputasyon değerlerine erişim 1
+ximp$imp$x1
+
+# Örnek 9.44: mice ile imputasyon değerlerine erişim 2
+ximp$imp
+
+# Örnek 9.45: mice ile imputasyon değerlerine erişim 3
+xc1 <- complete(ximp,1)
+xc1
+
+# Örnek 9.46: mice ile imputasyon değerlerine erişim 4
+xc2 <- complete(ximp,2)
+xc2
+
+# Örnek 9.47: mice ile varsayılan değerlerle imputasyon işlemi
+if(!require(mice)){
+   install.packages("mice"); library(mice)}
+xdtimpute0 <-  mice(xdt, maxit=0) 
+
+# Örnek 9.48: mice nesnesi özniteliklerinin görüntülenmesi
+attributes(xdtimpute0)
+
+# Örnek 9.49: mice nesnesi özniteliklerine erişim
+tahminmatris <- xdtimp$predictorMatrix
+impyontem <- xdtimp$method
+
+# Örnek 9.50: mice nesnesi özniteliklerinin görüntülenmesi
+tahminmatris
+impyontem
+
+# Örnek 9.51: mice nesnesi öznitelikleriyle çalışma 1
+tahminmatris[, c("f")] <- 0 
+
+# Örnek 9.52: mice nesnesi öznitelikleriyle çalışma 2
+impyontem[c("f")]="" 
+impyontem[c("x1","x2")]="pmm" 
+impyontem [c("y")]="norm.nob"
+
+# Örnek 9.53: mice nesnesi öznitelikleriyle çalışma 3
+impyontem
+
+# Örnek 9.54: mice nesnesi yöntemleri listesi yapma
+impyontem <- c("", "norm.nob", "pmm", "pmm")
+
+# Örnek 9.55: mice ile imputasyon sonuçlarının görüntülenmesi
+set.seed(1923)
+xcdt <- complete(xdtimpute)
+xcdt
+
+# Örnek 9.56: mice ile imputasyon sonuçlarının görüntülenmesi
+xyplot(xdtimpute,  x1~x2 | .imp, pch = 20, cex = 1.4)
+
+# Örnek 9.57: mice ile imputasyon sonuçlarını havuzlama
+if(!require(mice)){
+   install.packages("mice"); library(mice)}
+xdtimpute <- mice(xdt, m = 5)
+model <- with(data = xdtimpute, lm(y ~ x1 + x2))#Tahmin modeli
+poolxdt <- pool(model) #İmputasyon sonuçlarını havuzla
+poolxdt 
+
+# Örnek 9.58: Kalitatif değişkenler için örnek veri çerçevesi
+xdt[4, "f"] <- NA
+xdt
+
+# Örnek 9.59: Tepe değeri hesaplama fonksiyonu ile uygulama
+idx <- !sapply(xdt, is.numeric)
+xcdt <- xdt
+xcdt[idx] <- lapply(xdt[idx], function(x)
+   replace(x, is.na(x), tepe(x[!is.na(x)])))
+xcdt
+
+# Örnek 9.60: kNN ile kayıp değer tamamlama
+if(!require(DMwR)){
+   install.packages("DMwR"); library(DMwR)}
+knnsonuc <- knnImputation(x, k=5)
+
+# Örnek 9.61: kNN ile kayıp değer için örnek veriseti yükleme
+data(algae)
+str(algae)
+
+# Örnek 9.62: algae verisetindeki kayıp değerler
+which(!complete.cases(algae))
+mice::md.pattern(algae)
+
+# Örnek 9.63: algae verisetinde kNN ile kayıp değer imputasyonu
+impalgae <- knnImputation(algae)
+which(!complete.cases(impalgae))
+anyNA(impalgae)
+
+# Örnek 9.64: algae verisetinde kNN ile kayıp değer imputasyonu
+Cl_gercek <- algae$Cl[is.na(algae$Cl)]
+Cl_tahmin <- impalgae$Cl[is.na(impalgae$Cl)]
+regr.eval(Cl_gercek, Cl_tahmin) 
+
+# Örnek 9.65: rpart ile kayıp değer tamamlama
+aovmodel <- rpart(Cl ~ . , data=algae[!is.na(algae$Cl),], 
+  method="anova", na.action=na.omit)  
+climp <- predict(aovmodel, algae[is.na(algae$Cl), ])
+climp
+algae[which(is.na(algae$Cl)), "Cl"] <- climp
+
+# Örnek 9.66: rpart ile kayıp değer tamamlama
+classmodel <- rpart(speed~.,data=algae[!is.na(algae$speed),], 
+    method="class", na.action=na.omit)  
+speedimp <- predict(classmodel, algae[is.na(algae$speed), ])
+speedimp
+
+# BÖLÜM 10 #######################################################
+
+# Örnek 10.1: Aykırı değerli veri tanımlama
+x <- c(58,89,69,66,63,95,85,88,62,81,70, 86,85,98,67,74,97,96,85,85)
+x <- c(x, c(10,15,30,120,150,160)) # x'e aykırı değer ekle
+x
+
+# Örnek 10.2: Veriyi standartlaştırma
+z <- (x-mean(x))/sd(x)  # standart normal değişken
+z
+adx <- which(abs(z) > 3)
+adx
+
+# Örnek 10.3: Şerit grafik çizimi
+stripchart(x)
+
+# Örnek 10.4: Kutu-bıyık grafiği çizimi
+boxplot(x, col="gray")
+
+# Örnek 10.5: Aynı veride iki farklı kutu-bıyık grafiği
+oldpar <- par(mfrow=c(1,2))
+boxplot(x, col="gray", range = 3)
+boxplot(x, col="gray", range = 0)
+par(oldpar)
+
+# Örnek 10.6: Aykırı değerleri listeleme
+bpx <- boxplot(x, col="gray") 
+bpx$out
+
+# Örnek 10.7: Aykırı değerleri boxplot.stats ile bulma
+bpstx <- boxplot.stats(x) 
+bpstx
+bpstx$out
+adx <- bpstx$out
+
+# Örnek 10.8: Aykırı değerleri boxplot.stats ile bulma
+boxplot(x, main="x veriseti")
+mtext(paste("Aykırı değerler: ", paste(bpx$out, 
+  collapse=", ")), cex=0.8, col="red")
+
+# Örnek 10.9: Aykırı değerlerden temizlenmiş veri
+adx <- bpstx$out
+cx <- x[-which(x %in% adx)]
+cx
+
+# Örnek 10.10: Aykırı değerlerden temizlenmiş veri grafiği
+bpx1 <- boxplot(cx, col="gray")
+bpx1$out
+
+# Örnek 10.11: Aykırı değerlerden temizlenmiş veri grafiği
+adx <- bpx1$out
+adx
+cx <- cx[-which(cx %in% adx)]
+bpx2 <- boxplot(cx, col="gray")
+bpx2$out
+
+# Örnek 10.12: Aykırı değerleri temizleme ve grafik çizimi
+adx <- bpx2$out
+adx
+cx <- cx[-which(cx %in% adx)]
+bpx3 <- boxplot(cx, col="gray")
+bpx3$out
+
+# Örnek 10.13: Aykırı değerleri adsapta ile saptama
+adx <- adsapta(x)
+adx
+
+# Örnek 10.14: Aykırı değerleri temizleme
+cx <- x[-which(x %in% adx)]
+cx
+
+# Örnek 10.15: Kutu-bıyık grafikleri
+oldpar <- par(mfrow=c(1,2))
+boxplot(x, col="gray")
+boxplot(cx, col="gray")
+par(oldpar)
+
+# Örnek 10.16: Örnek veri çerçevesi oluşturma
+set.seed(19)
+x1 <- round(rnorm(n=20, mean=100, sd=15), 0)
+x2 <- round(rnorm(n=20, mean=10, sd=4), 0)
+x3 <- round(rnorm(n=20, mean=60, sd=6), 0)
+x1[5] <- 160
+x1[10] <- 175
+x3[15] <- 20
+x3[20] <- 90
+x <- cbind(x1, x2, x3)
+
+# Örnek 10.17: Örnek veri çerçevesi içeriği ve grafiği
+x
+boxplot(x, col=c(2:3,5))
+
+# Örnek 10.18: adsapta ile aykırı değer arama
+adsapta(x1)
+adsapta(x2)
+adsapta(x3)
+
+# Örnek 10.19: adsapta2 ile aykırı değer arama
+adx <- adsapta2(x)
+adx
+
+# Örnek 10.20: Aykırı değer temizleme
+xs <- x[-adx,]
+xs
+
+# Örnek 10.21: Aykırı değer temizleme
+adsapta2(x)
+
+# Örnek 10.22: Eşik değerlerle aykırı değer saptama
+x <- c(58,89,69,66,63,95,85,88,62,81,70,86,85,98,67,74,97,96,85,85)
+x <- c(x, c(10,15,30,120,150,160)) #aykırı değer ekle
+k <- 1.5
+xq1 <- unname(summary(x)[2])  #Q1
+xq2 <- unname(summary(x)[3])  #Q2
+xq3 <- unname(summary(x)[5])  #Q3
+t1 <- xq1 - 2 * k * (xq2-xq1) #Aykırı değer alt eşiği
+t2 <- xq3 + 2 * k * (xq3-xq2) #Aykırı değer üst eşiği
+adx <- x[which(x < t1 | x > t2)]
+adx
+
+# Örnek 10.23: Eşik değerlerle aykırı değer saptama
+adx <- boxplot.stats(x)
+adx
+
+# Örnek 10.24: Medcouple çarpıklık katsayısı
+m <- robustbase::mc(x) 
+m
+
+# Örnek 10.25: Çarpıklık düzeltmeli aykırı değer saptama
+xiqr <- IQR(x)  #IQR
+xq1 <- unname(summary(x)[2])  #Q1
+xq3 <- unname(summary(x)[5])  #Q3
+a <- -3
+b <- 4
+e <- 2.718282
+t1 <- xq1 - 1.5 * e^(a*m) * xiqr
+t2 <- xq3 + 1.5 * e^(b*m) * xiqr
+adx <- x[which(x < t1 | x > t2)]
+adx
+
+# Örnek 10.26: Çarpıklık düzeltmeli aykırı değer saptama 2
+duzadx <- robustbase::adjboxStats(x)
+duzadx
+
+# Örnek 10.27: Çarpıklık düzeltmeli aykırı değer saptama 2
+if(!require(univOutl)){
+  install.packages("univOutl"); library(univOutl)}
+adx1 <- boxB(x, k=1.5, method='resistant')
+adx1
+
+# Örnek 10.28: Aykırı değerleri listeleme
+x[adx1$outliers]
+
+# Örnek 10.29: Aykırı değerleri listeleme
+adx2 <- boxB(x, k=1.5, method='asymmetric')
+x[adx2$outliers]
+adx3 <- boxB(x, k=1.5, method='adjbox')
+x[adx3$outliers]
+
+# Örnek 10.30: IQR ve MAD hesaplama
+IQR(x)
+mad(x)
+
+# Örnek 10.31: Sn ve Qn hesaplama
+if(!require(robustbase)){
+   install.packages("robustbase"); library(robustbase)}
+Qn(x, finite.corr = FALSE)
+Sn(x, finite.corr = FALSE)
+
+# Örnek 10.32: univOut1 ile aykırı değer saptama
+if(!require(univOutl)){
+   install.packages("univOutl"); library(univOutl)}
+adx <- LocScaleB(x, k=1.5, method="IQR",  
+    weights=NULL, id=NULL, exclude=NA, 
+    logt=FALSE, return.dataframe=FALSE)
+
+# Örnek 10.33: univOut1 ile aykırı değer saptama
+adx
+
+# Örnek 10.34: Aykırı değerlerin listelenmesi
+adx$outliers
+x[adx$outliers]
+
+# Örnek 10.35: Aykırı değerlerin hesaplanması
+if(!require(univOutl)){
+   install.packages("univOutl"); library(univOutl)}
+adx1 <-LocScaleB(x, method = "IQR", k=1.5)
+adx2 <-LocScaleB(x, method = "Sn", k=1.5)
+adx3 <-LocScaleB(x, method = "Qn", k=1.5)
+adx4 <-LocScaleB(x, method = "dQ", k=1.5)
+
+# Örnek 10.36: Grubbs testi 1
+if(!require(outliers)){
+   install.packages("outliers"); library(outliers)}
+grubbs.test(x, type=10, opposite=FALSE, two.sided=FALSE)
+
+# Örnek 10.37: Grubbs testi 2
+grubbs.test(x, type = 10, opposite = TRUE, two.sided = FALSE)
+
+# Örnek 10.38: Grubbs testi 3
+grubbs.test(x, type = 11)
+
+# Örnek 10.39: Grubbs testi 4
+grubbs.test(x, type = 20, two.sided = FALSE)
+
+# Örnek 10.40: Dixon testi 1
+dixon.test(x, two.sided=FALSE)
+
+# Örnek 10.41: Dixon testi 2
+dixon.test(x,opposite=TRUE, two.sided=FALSE)
+
+# Örnek 10.42: Dixon testi 3
+dixon.test(x,type=21)
+
+# Örnek 10.43: Rosner testi
+# Rosner test istatistiği
+rosner <- function(x){
+   esd <- abs(x - mean(x))/sd(x)
+   df <- data.frame(x, esd)
+   mesd <- max(df$esd)
+   list(mesd, df)
+}
+# Girdi argümanları
+n <- length(x)
+k <- 20	# Test edilecek muhtemel aykırı değer sayısı
+alpha <- 0.05
+lamda <- c(1:k)
+R <- c(1:k)
+for(i in 1:k){
+  if(i==1){
+    rt <- rosner(x)
+    R[i] <- unlist(rt[1])
+    df <- data.frame(rt[2])
+    sonuc <- df[df$esd!=max(df$esd),]
+  }else{
+    rt <- rosner(sonuc$x)
+    R[i] <- unlist(rt[1])
+    df <- data.frame(rt[2])
+    sonuc <- df[df$esd!=max(df$esd),]
+  }
+  ## Kritik değerler
+  p <- 1 - alpha/(2*(n-i+1))
+  t <- qt(p,(n-i-1))
+  lamda[i] <- t*(n-i) / sqrt((n-i-1+t**2)*(n-i+1))
+}
+
+# Örnek 10.44: Rosner testi ile aykırı değer saptama
+sonuc <- data.frame(c(1:k),R,lamda, R>lamda)
+names(sonuc) <- c("ID","Test İstatistiği", "Kritik Değer", "AD")
+sonuc
+
+# Örnek 10.45: EnvStats ile Rosner testi
+if(!require(EnvStats)){
+   install.packages("EnvStats"); library(EnvStats)}
+adx <- rosnerTest(x, k = 8, alpha = 0.05, warn = TRUE)
+
+# Örnek 10.46: EnvStats ile Rosner testi sonuçları
+adx
+
+# Örnek 10.47: EnvStats ile Rosner testi sonuçları
+adx$n.outliers
+adx$bad.obs
+
+# Örnek 10.48: Örnek veriseti oluşturma
+set.seed(19)
+x1 <- round(rnorm(n=20, mean=100, sd=15), 0)
+x2 <- round(rnorm(n=20, mean=10, sd=4), 0)
+x3 <- round(rnorm(n=20, mean=60, sd=6), 0)
+#Aykırı değerler ekle
+x1[5] <- 160
+x1[10] <- 175
+x3[15] <- 20
+x3[20] <- 90
+x <- cbind(x1, x2, x3)
+# Aykırı değerler içeren veriseti
+x
+
+# Örnek 10.49: Matris oluşturma
+p <- ncol(x) 
+n <- nrow(x) 
+mx <- matrix(data=1, nrow=n)%*% cbind(mean(x1),mean(x2),mean(x3))
+mx
+
+# Örnek 10.50: Farklar matrisi
+dx <- x - mx
+dx
+
+# Örnek 10.51: Varyans-kovaryans matrisi
+covx <- (1/(n-1)) * t(dx) %*% dx
+covx
+
+# Örnek 10.52: x'in varyansı
+var(x1)
+
+# Örnek 10.53: Varyans-kovaryans matrisi hesaplama 2
+covx2 <- cov(x)
+covx2
+
+# Örnek 10.54: Varyans-kovaryans matrisinin tersi
+icovx <- MASS::ginv(covx)
+icovx
+
+# Örnek 10.55: Mahalanobis uzakları 
+mdx <- sqrt(rowSums(dx %*% icovx * dx))
+mdx
+
+# Örnek 10.56: Eşik değerleri 
+pcv1 <- qchisq(0.95, df=p)
+pcv1
+pcv2 <- qchisq(0.975, df=p)
+pcv2
+pcv3 <- qchisq(0.99, df=p)
+pcv3
+
+# Örnek 10.57: Eşik değerinin karekökü 
+cutoff <- sqrt(pcv2)
+cutoff
+
+# Örnek 10.58: Eşik değerinin karekökü 
+adx <- which(mdx > cutoff)
+x[adx,]
+
+# Örnek 10.59: Aykırı değerlerin temizlenmesi 
+xs <- x[-adx,]
+xs
+
+# Örnek 10.60: Aykırı değerlerin saptanması 
+mx <- colMeans(x)
+covx <- cov(x)
+mdx <- mahalanobis(x, mx, covx)
+mdx
+
+# Örnek 10.61: Aykırı değerlerin saptanması 
+cutoff <- qchisq(0.975, df=p)
+adx <- which(mdx > cutoff)
+adx
+
+
+# Örnek 10.62: Aykırı değerlerin saptanması 
+oldpar <- par(pch=19, lwd=2, col="blue")
+if(!require(chemometrics)){
+   install.packages("chemometrics"); library(chemometrics)}
+mdx <- Moutlier(x, quantile = 0.975, plot = TRUE)
+mdx
+par(oldpar)
+
+# Örnek 10.63: Aykırı değerlerin saptanması 
+summary(mdx$md)
+mdx$cutoff
+
+# Örnek 10.64: Aykırı değerlerin saptanması 
+x <- as.data.frame(x)
+oldpar <- par(mfrow=c(1,3))
+qqplot(mdx$md, x$x1, plot.it = TRUE, 
+   xlab = "Mahalanobis Uzaklığı", ylab = "x1", main = "x veriseti")
+qqplot(mdx$md, x$x2, plot.it = TRUE, 
+   xlab = "Mahalanobis Uzaklığı", ylab = "x2", main = "x veriseti")
+qqplot(mdx$md, x$x3, plot.it = TRUE, 
+   xlab = "Mahalanobis Uzaklığı", ylab = "x3", main = "x veriseti")
+par(oldpar)
+
+# Örnek 10.65: Aykırı değerlerin listelenmesi 
+which(mdx$md > mdx$cutoff)
+x[which(mdx$md > mdx$cutoff),]
+
+# Örnek 10.66: Aykırı değerlerin listelenmesi 1
+mdx$rd
+mdx$cutoff
+adx <- which(mdx$rd > mdx$cutoff)
+adx
+
+# Örnek 10.67: Aykırı değerlerin listelenmesi 2
+x[adx,]
+
+# Örnek 10.68: Aykırı değerlerin 3B grafiği
+if(!require(scatterplot3d)){
+   install.packages("scatterplot3d"); library(scatterplot3d)}
+colpal <- c("blue", "red", "green", "magenta", "orange")
+n <-nrow(x)
+cadx <- rep(1, n)
+cadx[adx] <- 2
+scatterplot3d(x[,3], x[,2], x[,1], 
+    col.axis="blue", col.grid="lightblue",
+    main="3B Serpilme Grafiği", xlab="x3",ylab="x2",zlab="x1",
+    pch=19, color=colpal[cadx])
+
+# Örnek 10.69: mvoutlier ile korelasyon ve uzaklıklık grafikleri
+if(!require(mvoutlier)){
+   install.packages("mvoutlier"); library(mvoutlier)}
+opar <- par(mfrow=c(1,3), lwd=3, pch=19)
+x <- as.data.frame(x)
+corr.plot(x$x1, x$x2, alpha=0.025)
+corr.plot(x$x1, x$x3, alpha=0.025)
+corr.plot(x$x2, x$x3, alpha=0.025)
+par(opar)
+
+# Örnek 10.70: Aykırı değer grafikleri
+ddp1 <- dd.plot(x[,c("x1", "x2")], alpha=0.025)
+ddp2 <- dd.plot(x[,c("x1", "x3")], alpha=0.025)
+ddp3 <- dd.plot(x[,c("x2", "x3")], alpha=0.025)
+ddp1
+sum(ddp1$outliers)
+adx1 <-ddp1$outliers
+x[adx1,]
+
+# Örnek 10.71: Örnek veri oluşturma
+x <- matrix(c(0,0, 0, 1, 1,1,3,0), nrow=4, ncol=2, byrow=T)
+rownames(x) <- letters[1:4]
+colnames(x) <- c("v1","v2")
+x
+
+# Örnek 10.72: Örnek verisetinde Manhatta uzaklıkları 
+xmdist <- dist(x, "manhattan")
+xmdist
+
+# Örnek 10.73: Örnek veriseti oluşturma ve LOF ile aykırı değer
+set.seed(19)
+x1 <- round(rnorm(n=20, mean=100, sd=15), 0)
+x2 <- round(rnorm(n=20, mean=10, sd=4), 0)
+x3 <- round(rnorm(n=20, mean=60, sd=6), 0)
+# Aykırı değerler ekle
+x1[5] <- 160
+x1[10] <- 175
+x3[15] <- 20
+x3[20] <- 90
+x <- cbind(x1, x2, x3)
+if(!require(DMwR)){
+   install.packages("DMwR"); library(DMwR)}
+lofres <- lofactor(x, k=4)
+lofres
+
+# Örnek 10.74: Aykırı değerleri sıralama ve listeleme
+adx <- order(lofres, decreasing=T)[1:5]
+print(adx)
+
+# Örnek 10.75: Aykırı değerleri inceleme grafikleri 1
+pch <- rep("*", n)
+pch[adx] <- "o"
+col <- rep("black", n)
+col[adx] <- "red"
+pairs(x, pch=pch, col=col, cex=2)
+
+# Örnek 10.76: Aykırı değerleri inceleme grafikleri 2
+n <- nrow(x)
+labels <- 1:n
+labels[-adx] <- "*"
+biplot(prcomp(x), cex=2, xlabs=labels)
+
+# Örnek 10.77: Aykırı değerleri inceleme grafikleri 3
+plot(density(lofres), col="blue", lwd=2, 
+    ylab="Yoğunluk", main="LOF Yoğunluk Grafiği")
+abline(v=1.75, col="red")
+
+# Örnek 10.78: Aykırı değerleri listeleme 1
+cutoff <- 1.75
+which(lofres > cutoff)
+
+# Örnek 10.79: Aykırı değerleri listeleme 2
+q3 <- summary(lofres)[5]
+cutoff <- q3 +IQR(lofres)
+which(lofres > cutoff)
+
+
+# Örnek 10.80: Rlof ile aykırı değer saptama
+if(!require(Rlof)){
+   install.packages("Rlof"); library(Rlof)}
+rlofres1 <- lof(x, k=4)
+rlofres1
+
+# Örnek 10.81: lofactor ve lof sonuçlarını karşılaştırma
+lofres==rlofres1
+
+# Örnek 10.82: Farklı k değerlerinde lof ile hesaplama
+rlofres2 <- lof(x, k=c(3:6))
+rlofres2
+
+# Örnek 10.83: adlof ile aykırı değer listeleme
+adlof(x=rlofres2)
+
+# Örnek 10.84: Standartlaştırılmış değerlerde aykırı değer
+x <- scale(x, center = TRUE, scale = TRUE)
+if(!require(Rlof)){
+   install.packages("Rlof"); library(Rlof)}
+rlofres3 <- lof(x, k=4)
+rlofres3
+
+# Örnek 10.85: Standartlaştırılmış değerlerde aykırı değer
+q3 <- summary(rlofres3)[5]
+cutoff <- q3 +IQR(rlofres3)
+adx <- which(rlofres3 > cutoff)
+adx
+
+# Örnek 10.86: HDoutliers ile aykırı değer saptama 1
+if(!require(HDoutliers)){
+   install.packages("HDoutliers"); library(HDoutliers)}
+adx <- HDoutliers(x, alpha=0.05)
+adx
+
+# Örnek 10.87: HDoutliers ile aykırı değer saptama 2
+adx2 <- HDoutliers(x, alpha = 0.025)
+adx2
+
+# Örnek 10.88: HDoutliers ile aykırı değer inceleme grafiği
+plotHDoutliers(x, adx)
+
+# Örnek 10.89: Hiyerarşik kümeleme ile aykırı değer saptama
+distx <- dist(x, method="euclidean")
+hresx <- hclust(distx, method="single")
+plot(hresx, hang=-1, main="X Dendrogramı", ylab="Uzaklık")
+rect.hclust(hresx, k = 5, border = 2:6, lwd=2)
+
+# Örnek 10.90: Bölümleyici kümeleme ile aykırı değer saptama 1
+k <- 2
+kmres <- kmeans(x, k)
+kmres$centers
+kmres$cluster
+
+# Örnek 10.91: Bölümleyici kümeleme ile aykırı değer saptama 2
+merkezler <- kmres$centers[kmres$cluster, ] 
+uzakliklar <- sqrt(rowSums((x - merkezler)^2))
+adx <- order(uzakliklar, decreasing=TRUE)[1:5]
+adx
+
+# Örnek 10.92: Bölümleyici kümeleme ile aykırı değer grafiği
+plot(x[,c("x3", "x1")], pch=19, col=kmres$cluster, cex=1,
+    main="K-ortalamalar İle Aykırı Değerler")
+points(kmres$centers[,c("x3", "x1")], col=1:k, pch="+", cex=2)
+points(x[adx, c("x3", "x1")], pch=1, col=4, cex=2)
+
+# Örnek 10.93: abodOutlier aykırı değer saptama
+if(!require(abodOutlier)){
+   install.packages("abodOutlier"); library(abodOutlier)}
+abod(x, method = "complete")
+abod(x, method = "randomized", n_sample_size = 5)
+abod(x, method = "knn", k = 3)
+
+# Örnek 10.94: Sıralanmış abof değerleri
+abofx <- abod(x, method = "complete")
+sabofx <- sort(abofx)
+sabofx
+
+# Örnek 10.95: Aykırı değerleri inceleme grafiği
+plot(sabofx, pch=19, col=2)
+lines(sabofx, lwd=2, col=4)
+abline(h=0.09, lty=2, lwd=2, col=3)
+
+# Örnek 10.96: Aykırı değerleri listeleme 
+abofx <= 0.09
+adx <- which(abofx <= 0.09)
+adx
+xadx <- x[adx,]
+xadx
+
+
+# Örnek 10.97: Aykırı değer grafiklerini inceleme
+plot(x[,c("x3", "x1")], pch=19, cex=1)
+points(x[adx, c("x3", "x1")], pch=1, col=6, cex=2)
+
+# Örnek 10.98: Aykırı değer simülasyonu
+if(!require(MixSim)){
+   install.packages("MixSim"); library(MixSim)}
+set.seed(19)
+Q <- MixSim(BarOmega = 0.01, K=4, p=3)
+A <- simdataset(n=120, Pi=Q$Pi, Mu=Q$Mu, S=Q$S, n.out=5)
+x <- as.data.frame(cbind(A$X, A$id))
+colnames(x)<-c(paste0("x",1:dim(A$X)[2]), "cls")
+
+# Örnek 10.99: Simülasyonla oluşurulmuş aykırı değerler
+head(x, 10)
+tail(x, 10)
+
+# Örnek 10.100: Aykırı değerleri inceleme grafiği
+if(!require(scatterplot3d)){
+   install.packages("scatterplot3d"); library(scatterplot3d)}
+colpal <- c("blue", "red", "green", "magenta", "orange")
+n <-nrow(x)
+colx <- rep(1, n)
+colx[which(x$cls==0)]<- 2
+scatterplot3d(x[,3], x[,1], x[,2], 
+    col.axis="blue", col.grid="lightblue",
+    main="3B Serpilme Grafiği", xlab="x3",ylab="x2",zlab="x1",
+    pch=19, color=colpal[colx])
+
+# Örnek 10.101: Aykırı değerli simülasyonları dosyaya kaydetme
+setwd("C:/dpbook")
+write.table(file="ornek.dat", x, col.names=TRUE, row.names=FALSE)
+
+# Örnek 10.102: NoiseFiltersR ile Gürültü saptama 
+if(!require(NoiseFiltersR)){
+   install.packages("NoiseFiltersR"); library(NoiseFiltersR)}
+data(iris)
+sonuc <- ENN(Species~., data = iris, k = 5)
+summary(sonuc)
+
+# Örnek 10.103: NoiseFiltersR ile Gürültü saptama 
+attributes(sonuc)
+
+# Örnek 10.104: Gürültülerin listelenmesi 
+sonuc$remIdx
+
+# Örnek 10.105: Gürültüden arındırma
+iris1 <- sonuc$cleanData
+iris1[69:85,]
+
+# BÖLÜM 11 ##########################################################
+
+# Örnek 11.1:Normal ve Weibull dağılışından örnek veri oluşturma
+set.seed(1923)
+x1 <- rnorm(n=1000, mean=50, sd=2)
+x2 <- rweibull(n=1000, shape=1, scale=5)
+
+# Örnek 11.2: Örnek veri için histogramlar
+oldpar <- par(mfrow=c(1,2))
+hist(x1, col="gray", main="Normal")
+hist(x2, col="gray", main="Weibull")
+par(oldpar)
+
+# Örnek 11.3: Örnek veri için histogramlar
+oldpar <- par(mfrow=c(1,2))
+boxplot(x1, horizontal = TRUE,
+    col="gray", border="blue",
+    main="kutu-bıyık grafiği",
+    xlab="x1", ylab="")
+boxplot(x2,horizontal = TRUE,
+    col="gray", border="blue",
+    main="kutu-bıyık grafiği",
+    xlab="x2", ylab="")
+par(oldpar)
+
+# Örnek 11.4: Örnek veri için Q-Q grafikleri
+oldpar <- par(mfrow=c(1,2))
+qqnorm(x1, 
+     xlab="Teorik Kantiller", ylab="Örneklem Kantilleri",
+     main="Normal Dağılış (x1)")
+qqline(x1, col=2, lwd=2)
+qqnorm(x2, 
+     xlab="Teorik Kantiller", ylab="Örneklem Kantilleri",
+     main="Normal Olmayan Dağılış (x2)")
+qqline(x2, col=2, lwd=2)
+par(oldpar)
+
+# Örnek 11.5: Örnek veri için P-P grafikleri
+oldpar <- par(mfrow=c(1,2))
+plot(1:length(x1), sort(x1), 
+   pch=1, col="black",
+   xlab="x", ylab="Küm. Frekans") 
+lines(sort(x1), col="red", lwd=2)
+plot(1:length(x2), sort(x2), 
+   pch=1, col="black",
+   xlab="x", ylab="Küm. Frekans") 
+lines(sort(x2), col="red", lwd=2)
+par(oldpar)
+
+# Örnek 11.6: Örnek veri oluşturma
+x <- c(1,1.1,1.1,1.1,1.1,1.2,1.2,1.6,2.2,2.2,2.4,2.6,3,
+   4,4,4.1,4.1,4.1,4.2,4.5,5,5,5.1,10,10,10.5,15.2,20)
+q <- diff(range(x)) / sd(x)
+q
+
+# Örnek 11.7: Shapiro-Wilk testi
+shapiro.test(x1)
+shapiro.test(x2)
+
+# Örnek 11.7: D’Agostino D testi için hesaplama tablosu
+
+# Örnek 11.8: normtest ile Jarque-Bera testi
+if(!require(normtest)){
+   install.packages("normtest"); #Paket kurulu değilse
+   library(normtest)}
+jb.norm.test(x1)
+jb.norm.test(x2)
+
+# Örnek 11.9: tseries ile Jarque-Bera testi
+if(!require(tseries)){
+   install.packages("tseries"); #Paket kurulu değilse
+   library(tseries)}
+jarque.bera.test(x1)
+
+
+# Örnek 11.10: Anderson-Darling testi
+if(!require(nortest)){
+   install.packages("nortest"); #Paket kurulu değilse
+   library(nortest)}
+ad.test(x1)
+ad.test(x2)
+
+# Örnek 11.11: Örnek veri, ortalaması ve standart sapması
+x <- c(2, 4, 6, 3, 4, 5)
+xort <- mean(x)
+xort
+xstd <- sd(x)
+xstd
+
+# Örnek 11.12: Örnek verinin standartlaştırılması
+z <- (x-xort)/xstd
+z
+mean(z)
+sd(z)
+
+# Örnek 11.13: Örnek verinin standartlaştırılması
+x <- c(2, 4, 6, 3, 4, 5)
+sum(x)
+xort <- mean(x)
+xort
+xstd <- sqrt(var(x))
+xstd
+z <- (x-xort)/xstd
+z
+
+# Örnek 11.14: Örnek verinin scale ile standartlaştırılması 1
+z <- scale(x, center=TRUE, scale=TRUE) # kısaca scale(x)
+z
+
+# Örnek 11.15: Örnek verinin scale ile standartlaştırılması 2
+scale(x, center=FALSE, scale=TRUE)
+
+# Örnek 11.16: Örnek veride ölçek değeri
+sqrt(sum(x^2)/(length(x)-1))
+
+# Örnek 11.17: Örnek veride WS ölçeklendirmesi
+scale(x, center=median(x), scale=mad(x))
+
+# Örnek 11.18: Örnek veride QSUM ölçeklendirmesi
+scale(x, center=FALSE, scale=sum(x))
+
+# Örnek 11.19: Örnek veri çerçevesi oluşturma
+vagr <-  c(19, 25, 23)
+kaa <-  c(27, 44, 37)
+kya <- c(120, 198, 165)
+kdata <- cbind(vagr, kaa, kya)
+kdata
+
+
+# Örnek 11.20: Örnek veri çerçevesi oluşturma
+skdata1 <- scale(kdata)
+skdata1
+
+# Örnek 11.21: Standart veride tanımlayıcı istatistikler
+summary(skdata1)
+
+# Örnek 11.22: Örnek veride QMAX ölçeklendirmesi
+maxvals <- c(max(kdata[,1]), max(kdata[,2]), max(kdata[,3]))
+maxvals
+skdata2 <- scale(kdata, center=FALSE, scale=maxvals)
+skdata2 
+
+# Örnek 11.23: clusterSim paketini kurma ve yükleme
+if(!require(clusterSim)){
+   install.packages("clusterSim"); library(clusterSim)}
+
+# Örnek 11.25: data.Normalization ile QMAX ölçeklendirmesi
+skdata3 <- data.Normalization(kdata, type="n8", normalization="column")
+skdata3
+
+# Örnek 11.26: caret paketini kurma ve yükleme
+if(!require(caret)){
+   install.packages("caret"); library(caret)}
+
+# Örnek 11.27: preProcess ile standartlaştırma
+ppdata <- preProcess(kdata, method = c("center", "scale"))
+skdata3 <- predict(ppdata, kdata)
+skdata3
+
+# Örnek 11.28: kdata verisini tersine dönüştürme
+trkdata1 <- 1/kdata
+trkdata1
+
+# Örnek 11.29: kdata verisini logaritmik dönüşümü
+trkdata2 <- log(kdata)
+trkdata2
+
+# Örnek 11.30: kdata verisinde küpkök dönüştürmesi
+trkdata3 <- kdata^(1/3)
+trkdata3
+
+# Örnek 11.31: kdata verisinde karesine dönüştürme
+trkdata4 <- kdata^2
+trkdata4
+
+# Örnek 11.32: kdata verisinde arksinüs dönüştürmesi
+arksin <- function(x){
+   asin(sign(x) * sqrt(abs(x)))
+}
+fishdata <- c(38, 1, 13, 2, 13, 20, 50, 9, 28, 6, 4, 43)
+hist(fishdata)
+normfishdata <- (fishdata - min(fishdata)) / diff(range(fishdata))
+arksinfishdata <- arksin(normfishdata)
+hist(arksinfishdata)
+lines(density(arksinfishdata))
+
+# Örnek 11.33: Basit dönüştürme örnekleri
+x <- c( -3, -2, -1,  0,  1,  2,  3)
+x
+z <- log(x)
+z
+a <- 1-min(x)
+a
+w <- x + a
+w
+z <- log(w)
+z
+
+# Örnek 11.34: Fahrenhayt-> Celcius dönüşümü
+F <- c(0, 32, 100, 212)
+F
+C <- 5/9*(F-32)
+round(C,2)
+
+# Örnek 11.35: textConnection ile veri okuma
+veri <- textConnection("
+yer bulaniklik
+a 1.0
+a 1.2
+a 1.1
+a 1.1
+a 2.4
+a 2.2
+a 2.6
+a 4.1
+a 5.0
+a 10.0
+b 4.0
+b 4.1
+b 4.2
+b 4.1
+b 5.1
+b 4.5
+b 5.0
+b 15.2
+b 10.0
+b 20.0	
+c 1.1
+c 1.1
+c 1.2
+c 1.6
+c 2.2
+c 3.0
+c 4.0
+c 10.5
+")
+nbds <- read.table(veri, sep=" ", header=TRUE)
+yer <- nbds$yer
+bulaniklik <- nbds$bulaniklik
+
+# Örnek 11.36: rcompanion paketinin kurulması ve yüklenmesi
+if(!require(rcompanion)){
+   install.packages("rcompanion"); library(rcompanion)}
+
+# Örnek 11.37: bulaniklik verisi histogramı
+plotNormalHistogram(bulaniklik, col="gray",
+   xlab="Bulanıklık", ylab="Frekans")
+
+# Örnek 11.38: Q-Q grafiğinin çizilmesi
+qqnorm(bulaniklik, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Bulanıklık Örneklem Kantilleri",
+    main="Bulanıklık Q-Q Grafiği")
+qqline(bulaniklik, col="red", lwd=2)
+
+
+# Örnek 11.39: bulaniklik verisinde dönüştürme
+bkarekok <- sqrt(bulaniklik)
+bkupkok <- abs(bulaniklik)^(1/3)
+blog <- log(bulaniklik)
+
+# Örnek 11.40: bulaniklik verisinde dönüştürme
+oldpar <- par(mfrow=c(3,2))
+plotNormalHistogram(bkarekok,
+    col="gray", 
+    xlab="karekök(bulanıklık)", ylab="Frekans")
+qqnorm(bkarekok, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Örneklem Kantilleri",
+    main="Q-Q Grafiği")
+qqline(bkarekok, col="red", lwd=2)
+plotNormalHistogram(bkupkok, col="gray", 
+    xlab="küpkök(bulanıklık)", ylab="Frekans")
+qqnorm(bkupkok, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Örneklem Kantilleri",
+    main="Q-Q Grafiği")
+qqline(bkupkok, col="red", lwd=2)
+plotNormalHistogram(blog, col="gray", 
+    xlab="log(bulanıklık) ", ylab="Frekans")
+qqnorm(blog, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Örneklem Kantilleri",
+    main=" Q-Q Grafiği")
+qqline(blog, col="red", lwd=2)
+par(oldpar)
+
+
+# Örnek 11.41: bulaniklik verisinde BoxCox dönüştürmesi 1
+if(!require(MASS)){
+   install.packages("MASS"); library(MASS)}
+bboxcox <- boxcox(bulaniklik ~ 1, lambda = seq(-6,6,0.1))      
+bboxcox
+
+# Örnek 11.42: bulaniklik verisinde BoxCox dönüştürmesi 2
+dfboxcox <- data.frame(bboxcox$x, bboxcox$y)  
+head(dfboxcox)
+tail(dfboxcox)
+
+# Örnek 11.43: bulaniklik verisinde BoxCox dönüştürmesi 3
+idx <- with(dfboxcox, order(-bboxcox.y))
+dfboxcox2 <- dfboxcox[idx,]
+dfboxcox2[1,]     
+
+# Örnek 11.44: BoxCox dönüştürmesi  değeri
+lamda <- dfboxcox2[1, "bboxcox.x"]
+lamda
+         
+# Örnek 11.45: BoxCox dönüştürmesi yapılmış değerler
+trbulaniklik <- (bulaniklik^lamda-1)/lamda
+head(trbulaniklik)
+
+# Örnek 11.46: BoxCox dönüştürmesi yapılmış değerler grafiği
+oldpar <- par(mfrow=c(1,2))
+plotNormalHistogram(trbulaniklik, col="gray", 
+    xlab="Box-Cox Dönüştürmesi", ylab="Frekans")
+qqnorm(trbulaniklik, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Örneklem Kantilleri",
+    main="Q-Q Grafiği")
+qqline(trbulaniklik, col="red", lwd=2)
+par(oldpar)
+
+# Örnek 11.47: Yeo-Johnson veri dönüştürmesi
+if(!require(VGAM)){
+   install.packages("VGAM"); library(VGAM)}
+trbulaniklik <- yeo.johnson(nbds$bulaniklik, lambda=-0.2)
+trbulaniklik
+
+# Örnek 11.48: Yeo-Johnson dönüştürmesi yapılmış veri grafiği
+oldpar <- par(mfrow=c(1,2))
+plotNormalHistogram(trbulaniklik, col="gray", 
+    xlab="Yeo-Johnson Dönüştürmesi", ylab="Frekans")
+qqnorm(trbulaniklik, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Örneklem Kantilleri",
+    main="Q-Q Grafiği")
+qqline(trbulaniklik, col="red", lwd=2)
+par(oldpar)
+
+# Örnek 11.49: car paketinin kurulması ve yüklenmesi
+if(!require(car)){
+  install.packages("car"); library(car)}
+
+# Örnek 11.50: bulaniklik verisinde varyans analizi
+aovmodel1 <- lm(bulaniklik ~ yer, data=nbds)
+Anova(aovmodel1, type="II")
+
+# Örnek 11.51: bulaniklik verisinde varyans analizi diyagnostiği
+resaovmodel1 <- residuals(aovmodel1)
+oldpar <- par(mfrow=c(1,2))
+plotNormalHistogram(resaovmodel1, col="gray", 
+    xlab="Kalıntılar", ylab="Frekans")
+qqnorm(resaovmodel1, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Kalıntı Örneklem Kantilleri",
+    main="Q-Q Grafiği")
+qqline(resaovmodel1, col="red", lwd=2)
+par(oldpar)
+
+# Örnek 11.52: bulaniklik verisinde varyans analizi diyagnostiği
+plot(fitted(aovmodel1), residuals(aovmodel1),pch=19,
+    xlab="Bulanıklık Tahmin Değerleri", ylab="Kalıntılar")
+
+# Örnek 11.53: Dönüştürülmüş bulaniklik verisinde ANOVA
+nbds$trbulaniklik <- trbulaniklik
+aovmodel2 <- lm(trbulaniklik ~ yer, data=nbds)
+Anova(aovmodel2, type="II")
+
+# Örnek 11.54: Dönüştürülmüş veride varyans analizi diyagnostiği
+resaovmodel2 <- residuals(aovmodel2)
+oldpar <- par(mfrow=c(1,2))
+plotNormalHistogram(resaovmodel1, col="gray", 
+    xlab="Kalıntılar", ylab="Frekans")
+qqnorm(resaovmodel2, pch=19, col="blue",
+    xlab="Teorik Kantiller",
+    ylab="Kalıntı Örneklem Kantilleri",
+    main="Q-Q Grafiği")
+qqline(resaovmodel2, col="red", lwd=2)
+par(oldpar)
+
+# Örnek 11.55: Dönüştürülmüş veride normallik grafikleri
+plot(fitted(aovmodel2), residuals(aovmodel2),pch=19,
+    xlab="Bulanıklık Tahmin Değerleri", ylab="Kalıntılar")
+
+
+# Örnek 11.56: Orijinal ve dönüştürülmüş veriyi karşılaştırma
+oldpar <- par(mfrow=c(1,2))
+boxplot(bulaniklik ~ yer, data = nbds, 
+   col=c(2,3,5), xlab="Yer", ylab="Bulanıklık")
+boxplot(trbulaniklik ~ yer, data = nbds,
+   col=c(2,3,5), xlab="Yer", ylab="Dönüştürülmüş Bulanıklık")
+par(oldpar)
+
+# BÖLÜM 12 ###########################################################
+
+# Örnek 12.1: Veri dosyasının okunması ve görüntülenmesi
+setwd("C:/dpbook")
+sdata <- read.delim("sdata.txt", sep="", head=TRUE)
+sdata
+
+# Örnek 12.2: Veri dosyasının incelenmesi
+if(!require(swfscMisc)){
+   install.packages("swfscMisc"); library(swfscMisc)}
+kdsay <- na.count(sdata)
+kdsay
+kdyuzde <- kdsay / nrow(sdata) * 100
+kdyuzde
+kdcidx <- which(kdyuzde > 5)
+kdcidx
+
+# Örnek 12.3: Veri dosyasındaki kayıp değerlerin temizlenmesi
+rsdata1 <- sdata[,-kdcidx]
+rsdata1
+
+# Örnek 12.4: mice paketiyle kayıp değerlerin tamamlanması
+if(!require(mice)) {
+    install.packages("mice"); library(mice)}
+impsdata <- mice(rsdata1, m=15, method="pmm", maxit=20)
+rsdata2 <- complete(impsdata, 1)
+rsdata2
+
+# Örnek 12.5: mice paketiyle kayıp değerlerin tamamlanması 2
+impsdata <- mice(rsdata2, m=15, method="pmm", maxit=20)
+rsdata2 <- complete(impsdata,2)
+rsdata2
+
+# Örnek 12.6: rsdata3'teki değişkenlere ait istatistikler
+y <- rsdata2[,1]
+rsdata3 <- rsdata2[,2:ncol(rsdata2)]
+varyansx <- round(apply(rsdata3, 2, var),3)
+varyansx
+ssapmax <- round(apply(rsdata3, 2, sd), 3)
+ssapmax
+ortx <- round(apply(rsdata3, 2, mean), 3)
+ortx
+varkatx <- round(ssapmax / ortx * 100, 2)
+varkatx
+
+# Örnek 12.7: Varyasyonu düşük değişkenlerin saptanması
+kdcidx <- which(varkatx < 5.0)
+kdcidx
+
+# Örnek 12.8: Varyasyonu düşük değişkenin atılması
+rsdata4 <- rsdata3[,-kdcidx]
+rsdata5 <- cbind(y, rsdata4)
+rsdata5
+
+# Örnek 12.9: Korelasyon matrisi
+cormat <- cor(rsdata3)
+cormat
+
+# Örnek 12.10: Korelasyon grafiği
+if(!require(corrplot)) {
+   install.packages("corrplot"); library(corrplot)}
+corrplot.mixed(cormat,lower = "pie", upper="number", tl.col="black")
+
+# Örnek 12.11: Yüksek korelasyonlu değişkenlerin saptanması
+if(!require(caret)) {
+   install.packages("caret"); library(caret)}
+ykd <- findCorrelation(cormat, cutoff=0.9)
+ykd 
+ykd <- sort(ykd)
+ykd
+
+# Örnek 12.12: Yüksek korelasyonlu değişkenlerin atılması
+rsdata6 <- rsdata3[,-c(ykd)]
+rsdata7 <- cbind(y, rsdata6)
+rsdata7
+
+# Örnek 12.13: Çoklu doğrusal regresyon analizi
+regmodel <- lm(y ~ ., data=rsdata3)
+#veya regmodel <- lm(y ~ x1+x2+x3+x6, data=rsdata3)
+summary(regmodel)
+
+# Örnek 12.14: Çoklu doğrusal regresyonda VIF 
+if(!require(fmsb)) {
+   install.packages("fmsb"); library(fmsb)}
+VIF(lm(x1 ~ x6, data=rsdata3))
+VIF(lm(x1 ~ x2+x3, data=rsdata3))
+VIF(lm(x1 ~ x2+x3+x6, data=rsdata3))
+VIF(lm(x2 ~ x1, data=rsdata3))
+VIF(lm(x2 ~ x3, data=rsdata3))
+VIF(lm(x2 ~ x6, data=rsdata3))
+VIF(lm(x2 ~ x1+x3, data=rsdata3))
+VIF(lm(x2 ~ x3+x6, data=rsdata3))
+VIF(lm(x2 ~ x1+x3+x6, data=rsdata3))
+VIF(lm(x6 ~ x1, data=rsdata3))
+VIF(lm(x6 ~ x2, data=rsdata3))
+VIF(lm(x6 ~ x3, data=rsdata3))
+VIF(lm(x6 ~ x1+x2, data=rsdata3))
+VIF(lm(x6 ~ x1+x2+x3, data=rsdata3))
+
+# Örnek 12.15: Çoklu doğrusal regresyonda VIF 2
+if(!require(car)) {
+   install.packages("car"); library(car)}
+vif(lm(y ~ x1 + x2, data=rsdata3))
+vif(lm(y ~ x1 + x3, data=rsdata3))
+vif(lm(y ~ x1 + x6, data=rsdata3))
+vif(lm(y ~ x2 + x3, data=rsdata3))
+vif(lm(y ~ x2 + x6, data=rsdata3))
+vif(lm(y ~ x1 + x2 + x3, data=rsdata3))
+vif(lm(y ~ x1 + x2 + x3 + x6, data=rsdata3))
+
+# Örnek 12.16: İndirgenmiş veride çoklu doğrusal regresyon 
+regmodel <- lm(y ~ x1+x2+x6, data=rsdata3)
+summary(regmodel) 
+
+# Örnek 12.17: Minimum model ve tam model
+minmod <- lm(y~1, data=rsdata3)
+tammod <- lm(y~., data=rsdata3)
+
+# Örnek 12.18: İleriye doğru değişken ekleme
+step(minmod, scope=list(lower=minmod, upper=tammod), direction="forward")
+
+# Örnek 12.19: Geriye doğru değişken eleme 
+step(tammod, data=rsdata3, direction="backward")
+
+# Örnek 12.20: Kademeli regresyon analizi 
+step(minmod, direction = "both",
+  scope = list(lower = minmod, upper = tammod), 
+  trace = 0, steps = 1000)  
+
+# Örnek 12.21: Kademeli regresyon analizi 2
+kdmrmod <- step(minmod, direction = "both",
+   scope = list(lower = minmod, upper = tammod))
+slvars <- names(unlist(kdmrmod[[1]]))
+slvars <- slvars[!slvars %in% "(Intercept)"]  
+slvars
+
+# Örnek 12.22: En iyi modeli veren değişkenlerden veriseti
+rsdata8 <- rsdata3[, slvars]
+head(rsdata8)
+
+
+# Örnek 12.23: leaps ile en iyi modeli bulma
+if(!require(leaps)) {
+   install.packages("leaps"); library(leaps)}
+regssets <- regsubsets(y~., data=rsdata3, nbest=10)
+
+
+# Örnek 12.24: leaps regsubsets nesnesi öznitelikleri
+attributes(regssets)
+
+# Örnek 12.25: Değişken önemlilikleri grafiği
+par(mfrow=c(1,2))
+plot(regssets, scale="adjr2")
+plot(regssets, scale="bic")
+
+# Örnek 12.26: Boruta ile değişken önemlilikleri 
+if(!require(Boruta)) {
+   install.packages("Boruta"); library(Boruta)}
+borsonuc <- Boruta(y ~ ., data=na.omit(rsdata3), doTrace=2)
+
+# Örnek 12.27: Boruta nesnesi öznitelikleri 
+attributes(borsonuc)
+
+# Örnek 12.28: Boruta ile kabul ve reddedilen değişkenler 
+borsonuc$finalDecision
+
+# Örnek 12.29: Boruta ile önemli değişkenler listesi 
+impvars <- names(borsonuc$finalDecision[borsonuc$finalDecision
+   %in% c("Confirmed", "Tentative")])  
+impvars  
+
+# Örnek 12.30: Boruta ile önemli değişkenler listesi 
+plot(borsonuc, cex.axis=0.8, 
+  las=2, xlab="", ylab="Önemlilik", main="Değişken Önemliliği")  
+
+# Örnek 12.31: PCA analizi 
+pcasonuc <- princomp(rsdata3[,-1], cor=TRUE)
+summary(pcasonuc) 
+loadings(pcasonuc) 
+
+# Örnek 12.32: PCA analizi sonuç nesnesi öznitelikleri 
+attributes(pcasonuc)
+
+# Örnek 12.33: PCA analizi skor listesi 
+pcasonuc$scores 
+
+# Örnek 12.34: PCA analizi skor listesi 
+plot(pcasonuc, type="lines") 
+biplot(pcasonuc) 
+
+# Örnek 12.35: psych ile PCA analizi 
+if(!require(psych)){
+   install.packages("psych");library(psych)}
+pcasonuc2 <- principal(rsdata3[,-1], nfactors=3, rotate="varimax") 
+pcasonuc2
+
+# Örnek 12.36: psych ve GPArotation paketlerinin kurulması 
+if(!require(psych)){
+   install.packages("psych");library(psych)}
+if(!require(GPArotation)){
+   install.packages("GPArotation");library(GPArotation)}
+
+# Örnek 12.37: psych ile faktör analizi 1
+fapsonuc <- fa.parallel(rsdata3, fm = 'minres', fa = 'fa')
+
+# Örnek 12.38: psych ile faktör analizi 2
+fapsonuc <- fa.parallel(rsdata3, fm = 'ml', fa = 'fa')
+
+# Örnek 12.39: psych ile faktör analizi 3
+fasonuc <- fa(rsdata3, nfactors = 2, rotate = "oblimin", fm="minres")
+fasonuc 
+plot(fasonuc, pch=19, labels=names(rsdata3), cex=.7, ylim=c(-.1,1))
+
+# Örnek 12.40: Bileşen yükleri
+print(fasonuc$loadings, cutoff = 0.3)
+
+# Örnek 12.41: Yükleme diyagramı
+fa.diagram(fasonuc)
+
+# Örnek 12.42: psych ile faktör analizi 4
+fasonuc2 <- fa(rsdata3, nfactors=3, rotate="oblimin", m="minres")
+print(fasonuc2$loadings, cutoff = 0.3)
+fa.diagram(fasonuc2)
+
+# Örnek 12.43: Faktör analizinde tahminleme
+predsdata <- predict(fasonuc, rsdata3)
+colnames(predsdata) <- paste0("f", c(1:2))
+predsdata
+
+# Örnek 12.44: rpart ile karar ağacı
+if(!require(rpart)){
+   install.packages("rpart");library(rpart)}
+rpmodel <- rpart(y~., data=rsdata3, method="anova")
+
+# Örnek 12.45: rpart nesnesi öznitelikleri
+attributes(rpmodel)
+
+# Örnek 12.46: rpart analiz sonuçları
+printcp(rpmodel)
+
+# Örnek 12.47: rpart analizine değişken önemlilikleri
+rpmodel$variable.importance
+
+# Örnek 12.48: rpart analizi sonuçlarını görselleştirme
+plot(rpmodel)
+text(rpmodel, use.n=TRUE, cex=1, all=TRUE)
+
+# Örnek 12.49: party ile rastlantısal orman analizi
+if(!require(party)){
+   install.packages("party");library(party)}
+rfsonuc1 <- cforest(y~. , data= rsdata3, 
+   control=cforest_unbiased(mtry=2,ntree=50)) 
+
+# Örnek 12.50: Değişken önemlilikleri 1
+varimp(rfsonuc1) 
+
+# Örnek 12.51: Değişken önemlilikleri 2
+varimp(rfsonuc1, conditional=TRUE) 
+
+# Örnek 12.52: randomForest ile analiz
+if(!require(randomForest)){
+   install.packages("randomForest"); library(randomForest)}
+set.seed(1071)
+rorman <- randomForest(y~.,data=rsdata3, ntree=500, importance=TRUE)
+print(rorman)
+
+# Örnek 12.53: randomForest sonuç nesnesi öznitelikleri
+attributes(rorman)
+
+# Örnek 12.54: randomForest ile değişken önemlilikleri
+rormanimpvars <- importance(rorman)
+rormanimpvars
+
+# Örnek 12.55: Değişken önemlilikleri grafiği
+varImpPlot(rorman, col="blue", lwd=2, pch=19, cex=1.5)
+
+# Örnek 12.56: MARS analizi
+if(!require(earth)){
+   install.packages("earth"); library(earth)}
+model1 <- earth(y ~ ., data=rsdata3) 
+
+# Örnek 12.57: MARS analizi sonuçlarıyla değişken önemliliği
+estimpvars <- evimp(model1)
+estimpvars
+opar <- par(lwd=2)# Çizgi kalınlığı ayarlama
+plot(estimpvars, main="Değişken Önemliliği")
+par(opar)
+
+# Örnek 12.58: relaimpo paketini kurma ve yükleme
+if(!require(relaimpo)){
+   install.packages("relaimpo"); library(relaimpo)}
+model1 <- lm(y ~ . , data = rsdata3)
+
+# Örnek 12.59: relaimpo ile göreceli önemlilik
+relimpvars <- calc.relimp(model1, type="lmg", relative=TRUE)  
+sort(relimpvars$lmg, decreasing=TRUE)  
+
+# Örnek 12.60: Basit iadesiz rastlantısal örnekleme
+sample(1:100, size=10)
+
+# Örnek 12.61: Basit iadeli rastlantısal örnekleme
+sample(1:100, size=10, replace=TRUE)
+
+# Örnek 12.62: Farklı olasılıklı iadeli rastlantısal örnekleme
+x <- sample(1:4, size=10, replace=TRUE, 
+     prob=c(0.1,0.3,0.4,0.2))
+x
+xft <- table(x)/length(x)
+barplot(xft)
+
+# Örnek 12.63: Uniform dağılıştan örnekleme
+x <- round(runif(n=10, min=1, max=100))
+x
+sample(x, 4)
+
+# Örnek 12.64: Uniform dağılıştan örnekleme
+x <- c("kirmizi", "mavi", "yesil", "kahve", "siyah","kirmizi",
+  "mavi", "yesil","kahve", "siyah","siyah","kirmizi","mavi", 
+  "yesil")
+x
+sample(x, 5, replace=TRUE)
+
+# Örnek 12.65: Basit iadeli örnekleme işlemleri
+sample(1:10, size=4, replace=TRUE)
+sample(1:10, size=4, replace=TRUE)
+set.seed(123)
+sample(1:10, size=4, replace=TRUE)
+set.seed(123)
+sample(1:10, size=4, replace=TRUE)
+
+# Örnek 12.66: Normal dağılışlı veri simülasyonu
+x1 <- rnorm(n=1000, mean=40, sd=5)
+x2 <- rnorm(n=1000, mean=10, sd=2)
+x3 <- rnorm(n=1000, mean=100, sd=10)
+x <- data.frame(x1, x2, x3)
+head(x)
+tail(x)
+
+# Örnek 12.67: Veri çerçevesinden örnekleme
+smp <- sample(1:nrow(x), replace=TRUE,
+   size=as.integer(0.05*nrow(x)))
+
+# Örnek 12.68: Örneklenen verilerden veri çerçevesi oluşturma
+xs <- x[smp,]
+head(xs)
+tail(xs)
+
+# Örnek 12.69: Anakitle ve örneklem ortalamaları
+apply(x, 2, mean)
+apply(xs, 2, mean)
+
+# Örnek 12.70: Veri nesnes büyüklükleri
+object.size(x)
+object.size(xs)
+
+# Örnek 12.71: Eğitim ve test örneklemleri oluşturma 1
+ts <- as.integer(0.7*nrow(x))
+xt <- 1:ts
+xtrain <- x[xt,]
+xtest <- x[-xt,]
+head(xtrain)
+head(xtest)
+
+# Örnek 12.72: Eğitim ve test örneklemleri oluşturma 2
+ts <- as.integer(0.7*nrow(x))
+xt <- sample(1:nrow(x), size=ts, replace=FALSE)
+xtrain <- x[xt,]
+xtest <- x[-xt,]
+head(xtrain)
+head(xtest)
+
+# Örnek 12.73: ssample ile sistematik örnekleme
+ssample(100,5)
+
+# Örnek 12.74: Tabakalı örnekleme
+set.seed(123)
+x <- data.frame(yas = sample(15:50, 20, T), 
+      cins= sample(c("E","K"), 20, T),
+      ggrup=sample(c("D","O","Y"), 20, T),
+      bpuan = sample(0:4, 20, T))
+x
+
+# Örnek 12.75: dplyr ile tababakalı örnekleme
+if(!require(dplyr)){
+   install.packages("dplyr"); library(dplyr)}
+set.seed(123)
+xs <- x %>% group_by(ggrup) %>% sample_n(2, replace=TRUE)
+xs
+
+# Örnek 12.76: fifer ile tabakalı örnekleme
+if(!require(fifer)){
+   install.packages("fifer"); library(fifer)}
+xs <- stratified(x, group = 3, size = 2)
+xs 
+
+# Örnek 12.77a: x veri çerçevesini dosyaya yazma
+setwd("C:/dpbook")
+write.table(x, file="ogrveri.txt", sep="\t", 
+   row.names=F, col.names=T)
+
+# Örnek 12.77b: ogrveri.txt dosyasının okunması
+x <- read.table("ogrveri.txt", nrows=5, skip=4)
+x
+
+# Örnek 12.78: read.samples ile dosyadan örnekleme
+N <- 20; n=5
+samp <- sample(1:N, size=n)
+xsamp <- read.samples(file="ogrveri.txt", xs=samp)
+xsamp
+
+# Örnek 12.79: Sürekli veri dosyasının okunması 
+setwd("C:/dpbook")
+yaskilo <- read.table("yaskilo.txt", sep="\t", header=T)
+yaskilo
+
+# Örnek 12.80: EWI ile kesikleştirme
+k <- 4
+kes.yas <- cut(yaskilo$yas,k)
+kes.yas
+
+# Örnek 12.81: Frekans tablosu hazırlama
+table(kes.yas)
+
+# Örnek 12.82: cut ile etiketsiz kesikleştirme
+kes.yas <- cut(yaskilo$yas, breaks=k, labels=FALSE)
+kes.yas
+table(kes.yas)
+
+# Örnek 12.83: cut ile etiketli kesikleştirme
+etiket <- c("a","b","c","d") 
+kes.yas <- cut(yaskilo$yas, breaks=k, labels=etiket)
+kes.yas
+
+# Örnek 12.84: Kesme noktalarıyla kesikleştirme
+kes.yas <- cut(yaskilo$yas, breaks=c(15, 30, 45, 55, 100),
+   labels=c("15-30", "31-45", "46-55", "56-100"))
+kes.yas
+table(kes.yas)
+
+# Örnek 12.85: EFI ile kesikleştirme
+k <- 4
+kes.yas <- cut(yaskilo$yas, quantile(yaskilo$yas, probs=seq(0, 1, 1/k)))
+kes.yas
+table(kes.yas)
+
+# Örnek 12.86: Çok sayıda değişkenin kesikleştirilmesi
+k <- 4
+kes.yas <- cut(yaskilo$yas, breaks=k, labels=FALSE)
+kes.kilo <- cut(yaskilo$kilo, breaks=k, labels=FALSE)
+kes.yaskilo <- data.frame(kes.yas, kes.kilo)
+kes.yaskilo
+
+# Örnek 12.87: Sürekli ve kesiklik veriler için bellek tüketimi
+object.size(yaskilo)
+object.size(kes.yaskilo)
+
+# Örnek 12.88: discretize ile kesikleştirme 1
+if(!require(arules)){
+   install.packages("arules"); library(arules)}
+k <- 4
+kes.yas <- discretize(yaskilo$yas, method="interval", categories = k)
+kes.yas
+table(kes.yas)
+
+# Örnek 12.89: discretize ile kesikleştirme 2
+k <- 4
+kes.yas <- discretize(yaskilo$yas, method="frequency", categories = k)
+kes.yas
+table(kes.yas)
+
+# Örnek 12.90: discretize ile kesikleştirme 3
+k <- 4
+kes.yas <- discretize(yaskilo$yas, method="cluster", categories = k)
+kes.yas
+table(kes.yas)
+
+# Örnek 12.91: discretize ile kesikleştirme 4
+k <- 4
+kes.yas <- discretize(yaskilo$yas, method="cluster", categories = k, labels=c(1:k))
+kes.yas
+
+# Örnek 12.92: Kesikli veriseti
+k <- 4
+kes.yas <- discretize(yaskilo$yas, method="cluster", 
+     categories = k, labels=c(1:k))
+kes.kilo <- discretize(yaskilo$kilo, method="cluster", 
+     categories = k, labels=c(1:k))
+kes.yaskilo <- data.frame(kes.yas, kes.kilo)
+kes.yaskilo
+
+# Örnek 12.93: arc ile kesikleştirme
+if(!require(arc)){
+   install.packages("arc"); library(arc)}
+k <- 4
+kes.yas <- discretizeUnsupervised(yaskilo$yas, 
+     method="cluster", 
+     categories = k, labels=FALSE)
+kes.kilo <- discretizeUnsupervised(yaskilo$kilo, 
+     method="cluster", 
+     categories = k, labels=FALSE)
+kes.yaskilo <- data.frame(kes.yas=kes.yas$Disc.data, 
+     kes.kilo=kes.kilo$Disc.data)
+kes.yaskilo
+
+# Örnek 12.94: infotheo ile kesikleştirme 1
+if(!require(infotheo)){
+   install.packages("infotheo"); library(infotheo)}
+kes.yas <- discretize(X=yaskilo, disc="equalwidth", nbins=k)
+kes.yas
+
+# Örnek 12.95: infotheo ile kesikleştirme 2
+kes.yas <- discretize(X=yaskilo, disc="globalequalwidth", nbins=k)
+kes.yas
+
+# Örnek 12.96: Örnek veri dosyasının okunması
+setwd("C:/dpbook")
+yaskilo2 <- read.table("yaskilo2.txt", head=T)
+yaskilo2
+
+# Örnek 12.97: discretization paketiyle ChiMerge yöntemi
+if(!require(discretization)){
+   install.packages("discretization"); library(discretization)}
+res.yaskilo2 <- chiM(yaskilo2,alpha=0.05)
+res.yaskilo2
+
+# Örnek 12.98: CACC yöntemiyle kesikleştirme
+res.yaskilo3 <- disc.Topdown(yaskilo2, method=2)
+res.yaskilo3
+
+# Örnek 12.99: Kesikli verilerin veri çerçevesine atanması
+kes.yaskilo2 <- res.yaskilo2$Disc.data
+kes.yaskilo2
+
+# BÖLÜM 13 ##################################################################
+
+# Örnek 13.1: Orta hacimli bir veri dosyası oluşturma
+set.seed(123)
+n <- 6e+07 
+yil <- sample(c(2010:2017), n, replace = T)
+cins <- sample(c("E", "K"), n, replace = T)
+ders <- sample(c(LETTERS[1:5]), n, replace = T)
+csure <- sample(c(0:50), n, replace = T)
+bnot <- round(rnorm(n, 40, 20),1)
+df.not <- data.frame(yil, cins, ders, csure, bnot)
+write.table(df.not, file = "bigdatanot.txt",  sep= ",", 
+  row.names= F, col.names= T)
+
+# Örnek 13.2: Örnek veri içeriği, boyutu ve okuma süresi 
+head(xbd)
+dim(xbd)
+system.time(
+  xbd <- read.csv("bigdatanot.txt", stringsAsFactors=F, 
+  header=T)
+)
+
+# Örnek 13.3: Örnek veriyi hızlı okuma seçeneği
+system.time(
+   xbd <- readLines("bigdatanot.txt")
+)
+head(xbd)
+
+# Örnek 13.4: readLines ile okunan veriyi tabloya çevirme
+system.time(
+  xbd <- read.table(textConnection(xbd))
+)
+
+# Örnek 13.5: Veri dosyasından kısa bir bölüm okuma
+xbd.ornek <- read.csv("bigdatanot.txt",
+   stringsAsFactors=F, header=T, nrows=5) 
+xbd.ornek
+
+# Örnek 13.6: Veri dosyasının yapısını inceleme
+str(xbd.ornek)
+
+# Örnek 13.7: Veri dosyasındaki veri türleri 1
+xbd.degtur <- c("integer", rep("character", 2), "integer", "numeric")
+
+# Örnek 13.8: Veri dosyasındaki veri türleri 2
+xbd.degtur <- sapply(xbd.ornek, class)
+xbd.degtur
+
+
+# Örnek 13.9: Veri dosyasını hızlı okuma seçeneği 2
+system.time(
+   xbd <- read.csv("bigdatanot.txt", 
+   stringsAsFactors=F, header=T, 
+   colClasses=xbd.degtur)
+)
+
+# Örnek 13.10: Veri dosyasını hızlı okuma seçeneği 3
+system.time(
+  xbd <- read.csv("bigdatanot.txt", 
+    stringsAsFactors=F, header=T, 
+    colClasses=xbd.degtur, comment.char="")
+)
+
+# Örnek 13.11: Veri dosyasını hızlı okuma seçeneği 4
+if(!require(dplyr)){
+   install.packages("dplyr"); library(dplyr)}
+system.time(
+  xbd <- tbl_df(read.csv("bigdatanot.txt", 
+    stringsAsFactors=F, header=T, 
+    colClasses=xbd.degtur, comment.char=""))
+)
+head(xbd)
+
+# Örnek 13.12: Veri dosyasını hızlı okuma seçeneği 5
+if(!require(data.table)){
+   install.packages("data.table"); library(data.table)}
+system.time(
+  xbd <- fread("bigdatanot.txt")
+)  
+head(xbd)
+
+
+# Örnek 13.13: Veri dosyasını hızlı okuma seçeneği 5
+if(!require(bigmemory)){
+   install.packages("bigmemory"); library(bigmemory)}
+system.time(read.big.matrix('bigdatanot.txt', 
+   header = F, sep = ','))
+
+# Örnek 13.14: Basit matris tanımlama
+set.seed(123)
+x <- matrix(sample(1:10, 8), nrow=4, ncol=2)
+x
+
+# Örnek 13.15: Matrisi büyük matris türünden nesneye dönüştürme
+y <- as.big.matrix(x)
+y
+y[,]
+
+# Örnek 13.16: Büyük matris türü nesneyi dosyaya kaydetme
+write.big.matrix(y, "littlebig.txt")
+
+# Örnek 13.17: Büyük matris türü nesneyi dosyası okuma
+w <- read.big.matrix("littlebig.txt", type="integer")
+#w <- read.big.matrix("littlebig.txt")
+w[,]
+
+# Örnek 13.18: Büyük matris türü nesne elemanı güncelleme 1
+w[3,1] <- NA
+w[,]
+write.big.matrix(w, "littlebig2.txt")
+
+# Örnek 13.19: Büyük matris türü nesne dosyası okuma 2
+w <- read.big.matrix("littlebig2.txt", type="integer")
+w[,]
+
+# Örnek 13.20: Büyük matris türü nesne elemanı güncelleme 2
+w[1,1] <- Inf
+w[1,2] <- 30.45
+
+# Örnek 13.21: Büyük matris türü nesne elemanı güncelleme sonucu
+w[,]
+
+# Örnek 13.22: Büyük matris türünü değiştirme
+z <- as.big.matrix(x, type="double")
+z[1,1] <- Inf
+z[1,2] <- 30.45
+z[,]
+write.big.matrix(z, "littlebig3.txt")
+
+# Örnek 13.23: Büyük matris türünden nesne dosyası okuma
+z <- read.big.matrix("littlebig3.txt", type="double")
+z[,]
+
+# Örnek 13.24: Büyük matris okumada bilgi kaybı
+z <- read.big.matrix("littlebig3.txt", type="short")
+z[,]
+z <- read.big.matrix("littlebig3.txt", type="integer")
+z[,]
+
+
+# Örnek 13.25: Büyük matris dosyasına kayıt
+options(bigmemory.allow.dimnames=TRUE)
+rownames(z) <- as.character(1:nrow(z))
+colnames(z) <- c("V1","V2")
+head(z)
+write.big.matrix(z, "littlebig4.txt", row.names=T, col.names=T)
+
+# Örnek 13.26: Büyük matris dosyasını okuma
+z <- read.big.matrix("littlebig4.txt", type="double", header=T, has.row.names=T)
+head(z)
+
+# Örnek 13.27: Büyük matris dosyasını okumada hata
+z <- read.big.matrix("littlebig4.txt", header=T)
+
+# Örnek 13.28: Büyük matris dosyasını okumada hata giderme
+if(FALSE) z <- read.big.matrix("littlebig4.txt", header=T)
+
+
+# Örnek 13.29: Büyük matris dosyasını okuma
+setwd("C:/dpbook")
+xbd <- read.big.matrix("bigdatanot.txt", type="integer", header=T)
+head(xbd)
+
+# Örnek 13.30: Tamsayı değişkenler içeren bir dosya oluşturma
+set.seed(123)
+n <- 6e+07 
+yil <- sample(c(2010:2017), n, replace = T)
+cins <- sample(c(1:2), n, replace = T)
+ders <- sample(c(1:5), n, replace = T)
+csure <- sample(c(0:50), n, replace = T)
+bnot <- round(rnorm(n, 40, 20),0)
+df.not <- data.frame(yil, cins, ders, csure, bnot)
+write.table(df.not, file = "bigdatanot2.txt",  sep= ",", 
+   row.names= F, col.names= T)
+
+# Örnek 13.31: Tamsayı değişkenler içeren dosyayı okuma
+xbd <- read.big.matrix("bigdatanot2.txt", type="integer", header=T)
+head(xbd)
+
+
+# Örnek 13.32: Büyük matris dosyası özelliklerini görüntüleme
+xbd
+str(xbd) 
+describe(xbd)
+
+# Örnek 13.33: Büyük matrislerde is ile kontrol işlemleri
+is.big.matrix(xbd)
+is.filebacked(xbd)
+is.shared(xbd)
+
+# Örnek 13.34: Büyük matris dosyasının okunması
+xbd2 <- read.big.matrix("bigdatanot2.txt", 
+    type="integer", 
+    header=T, sep=",", 
+    backingpath=getwd(), backingfile="bigdatanot2.bin",
+    descriptor="bigdatanot2.desc", 
+    shared=T)
+head(xbd2)
+
+# Örnek 13.35: Arkadaki dosyanı özelliklerini listeleme
+describe(xbd2)
+is.big.matrix(xbd2)
+is.filebacked(xbd2)
+is.shared(xbd2)
+
+# Örnek 13.36: Büyük matris dosyası açıklayıcı bilgileri
+bddesc2 <- dget("bigdatanot2.desc")
+xbd3 <- attach.big.matrix(bddesc2)
+head(xbd3)
+is.big.matrix(xbd3)
+is.filebacked(xbd3)
+is.shared(xbd3)
+
+# Örnek 13.37: Büyük matris açıklayıcı bilgilerini kaydetme
+dput(bddesc2, file="bigdatanot.desc")
+
+# Örnek 13.38: Arka ve açıklayıcı dosyanın okunması
+setwd("C:/dpbook")
+if(!require(bigmemory)){
+   install.packages("bigmemory"); library(bigmemory)}
+bddesc <- dget("bigdatanot.desc")
+xbd4 <- attach.big.matrix(bddesc)
+head(xbd4)
+
+# Örnek 13.39: Büyük maytris dosyalarını okuma hızı testi
+system.time(xbd4 <- attach.big.matrix("bigdatanot.desc"))
+
+# Örnek 13.40: bigtabulate ile tablo hazırlama
+if(!require(bigtabulate)){
+   install.packages("bigtabulate"); library(bigtabulate)}
+bigtable(xbd4, ccols=c(1, 2))
+bigtabulate(xbd4, ccols=c(2,3), table=TRUE, useNA = "no")
+
+# Örnek 13.41: biganalytics ile doğrusal model analizi
+if(!require(biganalytics)){
+   install.packages("biganalytics"); library(biganalytics)}
+lmmod <- biglm.big.matrix(bnot ~ csure, data=xbd4)
+summary(lmmod)
+
+# Örnek 13.42: bighlm.big.matrix ile doğrusal model analizi
+lmmod2 <- bigglm.big.matrix(bnot ~ yil + csure, data=xbd4, fc="yil")
+summary(lmmod2)
+
+# Örnek 13.43: Sütun ortalamalarını hesaplama
+colmean(xbd4, cols=c(4:5))
+
+# Örnek 13.44: ff paketiyle okuma hızı testi
+setwd("C:/dpbook")
+if(!require(ff)){install.packages("ff"); library(ff)}
+system.time(xbd.ffdf <- read.csv.ffdf(file="bigdatanot.txt"))
+
+# Örnek 13.45: ffdf türü nesnelerin sınıfını öğrenme
+class(xbd.ffdf)
+
+# Örnek 13.46: ffdf türü nesnelerin yapısı
+str(xbd.ffdf)
+
+
+# Örnek 13.47: ffdf türünden veri çerçeveleriyle çalışma
+head(xbd.ffdf[,])
+mean(xbd.ffdf[,4])
+
+# Örnek 13.48: RMySQL paketinin kurulması ve yüklenmesi
+if(!require(RMySQL)){
+   install.packages("RMySQL"); library(RMySQL)}
+
+# Örnek 13.49: RPostgreSQL ile veritabanına bağlanma
+if(!require(RPostgreSQL)){
+   install.packages("RPostgreSQL"); library(RPostgreSQL)}
+surucu <- dbDriver ("PostgreSQL")
+testbaglanti <- dbConnect (surucu, db = "testdbms", 
+    user= "root", password = "***", host = "localhost")
+veriseti1 <- dbGetQuery(testbaglanti,"SELECT * FROM tablo1")
+
+# Örnek 13.50: Bilgisayarın çekirdek sayısını öğrenme
+if(!require(parallel)){
+   install.packages("parallel"); library(parallel)}
+detectCores() 
+
+# Örnek 13.51: iris verisetini çalışma alanına yükleme
+data(iris)
+head(iris)
+
+# Örnek 13.52: lmer ile analiz
+if(!require(lme4)){install.packages("lme4"); library(lme4)}
+fonksiyon1 <- function(i) {
+  lmer(Sepal.Length ~ . - Species + (1 | Species), data = iris)
+}
+
+# Örnek 13.52: fonksiyon1'in çıktıları
+fonksiyon1()
+
+# Örnek 13.53: lapply ile hız artışı
+system.time(fres1 <- lapply(1:100, fonksiyon1))
+system.time(fres2 <- mclapply(1:100, fonksiyon1))
+
+# Örnek 13.54: Çok çekirdek kullanarak analiz
+system.time(fres2 <- mclapply(1:100, fonksiyon1, mc.cores=5))
+
+# Örnek 13.55: Çekirdek sayısını öğrenme
+cekirdeksayi <- detectCores()
+cekirdeksayi
+
+# Örnek 13.56: Çekirdekleri paralel hesaplamaya hazırlama
+kume <- makeCluster(cekirdeksayi-5)
+
+# Örnek 13.57: Çekirdeklere göre işlem sonuçlarını öğrenme
+clusterEvalQ(kume, 3*2)
+
+# Örnek 13.58: Çekirdeklerdeki nesneleri listeleme
+clusterEvalQ(kume, library(lme4))
+
+# Örnek 13.59: parApply için hız testi
+system.time(fres3 <- parLapply(kume, 1:100, fonksiyon1))
+
+# Örnek 13.60: Çekirdek kümelerini iptal etme
+stopCluster(kume)
+
+# Örnek 13.61: Küme tanımı olmadığında hata mesajı
+system.time(fres3 <- parLapply(kume, 1:100, fonksiyon1))
+
+# Örnek 13.62: Paralel hesaplamada hız artışı örneği
+tamkume <- makeCluster(cekirdeksayi)
+clusterEvalQ(tamkume, library(lme4))
+system.time(fres4 <- parLapply(kume, 1:100, fonksiyon1))
+stopCluster(tamkume)
+
+# Örnek 13.63: Revolution Analytics Hadoop paketlerini kurma
+if(!require(devtools)){
+    install.packages("devtools"); library(devtools)}
+devtools::install_github(c('RevolutionAnalytics/rmr2/pkg',
+   'RevolutionAnalytics/plyrmr/pkg'))
+
+# Örnek 13.64: Hadoop ile büyük veride regresyon analizi 
+if(!require(rmr2)){
+   install.packages("rmr2"); library(rmr2)}
+x <- matrix(rnorm(2e6), ncol=20)
+x1 <- cbind(1:nrow(x), x)
+x1 <- to.dfs(x1)
+y <- as.matrix(rnorm(1e+05))
+mapper1 <- function(., xr) {
+  xr <- xr[,-1]
+  keyval(1, list(t(xr) %*% xr))
+}
+reducer <- function(., A) {
+  keyval(1, list(Reduce('+', A)))
+}
+mapper2 <- function(., xr) {
+  yr <- y[xr[,1],]
+  xr <- xr[,-1]
+  keyval(1, list(t(xr) %*% yr))
+}
+xtx <- values(
+  from.dfs(
+    mapreduce(
+      input = x1,
+      map = mapper1,
+      reduce = reducer,
+      combine = T
+    )
+  )
+)[[1]]
+xty <- values(
+  from.dfs(
+    mapreduce(
+      input = x1,
+      map = mapper2,
+      reduce = reducer,
+      combine = T
+    )
+  )
+)[[1]]
+beta <- solve(xtx, xty)
+beta
+
+# BÖLÜM 14 ###############################################################
+
+# Örnek 14.1: Bellek miktarını öğrenme
+memory.size()
+
+# Örnek 14.2: Bellek limitini öğrenme
+memory.limit()
+memory.size(NA)
+
+# Örnek 14.3: Bellek limitini ayarlama
+memory.size(12000)
+memory.limit()
+
+# Örnek 14.4: R'de çalıştırılan komutlar
+a <- 12
+b <- 5.2
+c <- "Adana"
+d <- TRUE
+e <- NA
+f <- log(a)
+g <- a^3-1
+.x <- c("A","B")
+x1 <- c(2.1, 5.3, 1.7, 7.2, 4.6)
+x2 <- c(10, 30, 25, 55, 34)
+dfx <- data.frame(x1, x2)
+matx <- matrix(nrow=5, ncol=2, c(x1,x2), byrow=F)
+ktop <- function(x){
+   ktopx <- sum(x^2)
+   return(ktopx)
+}
+ktx1 <- ktop(x1)
+ktx2 <- ktop(x2)
+sqktx <- sqrt(ktx1*ktx2)
+
+# Örnek 14.5: Bellek miktarında artış
+memory.size() 
+
+# Örnek 14.6: Çalışma alanındaki nesneler listesi 1
+ls()
+
+# Örnek 14.7: Çalışma alanındaki nesneler listesi 2
+ls(pattern="x")
+
+# Örnek 14.8: Çalışma alanındaki nesneler listesi 3
+ls(pattern="x", all.names=TRUE)
+
+# Örnek 14.9: Çalışma alanındaki nesneler listesi 4
+nesneler <- ls()
+nesneler
+
+# Örnek 14.10: Nesnelerin bellek tüketimleri
+object.size(a)
+object.size(x1)
+object.size(matx)
+object.size(dfx)
+
+# Örnek 14.11: pryr ile nesnelerin bellek tüketimleri
+if(!require(pryr)){
+   install.packages("pryr"); library(pryr)}
+object_size(a)
+object_size(x1)
+object_size(matx)
+object_size(dfx)
+
+
+# Örnek 14.12: multilevelPSA ile nesnelerin bellek tüketimleri
+if(!require(multilevelPSA)){
+   install.packages("multilevelPSA"); library(multilevelPSA)}
+lsos()
+
+# Örnek 14.13: Nesne türlerine göre farklı bellek tüketimleri
+object.size(integer())
+object.size(double())
+object.size(logical())
+object.size(raw())
+object.size(complex())
+object.size(character())
+object.size(vector())
+object.size(list())
+object.size(data.frame())
+object.size(matrix())
+
+# Örnek 14.14: Nesne türlerine göre farklı bellek tüketimleri
+as.integer(2^32)
+
+# Örnek 14.15: Nesnelerin toplam bellek tüketimi
+nesneler <- ls()
+bellektuketim(nlist=nesneler)
+
+# Örnek 14.16: Kullanılan bellek miktarı
+if(!require(pryr)){
+   install.packages("pryr"); library(pryr)}
+mem_used()
+
+# Örnek 14.17: Bellek profili
+memory.profile()
+
+# Örnek 14.18: Bellekten nesne temizleme
+rm(x1)
+ls()
+
+# Örnek 14.19: Bellekten birçok nesneyi temizleme
+rm(list=c("ktx1", "ktx2", "x2"))
+ls()
+
+# Örnek 14.20: Bellekten tüm nesneleri temizleme
+rm(list=ls())
+ls()
+
+# Örnek 14.21: Çöp toplama
+gc()
+
+# Örnek 14.22: iris verisetinde hiyerarşik kümeleme 
+data(iris)
+x <- iris[, -5]
+xdist <- dist(x, method="euclidean")
+xhc <- hclust(xdist, method="complete"))
+plot(xhc, cex=0.5, col=4)
+
+
+# Örnek 14.23: iris hiyerarşik kümelemede bellek tüketimi
+object.size(x)
+object.size(xdist)
+object.size(xhc)
+
+# Örnek 14.24: iris verisetinde hiyerarşik kümeleme dendrogramı
+plot(hclust(dist(iris[,-5], method="euclidean"), 
+   method="complete"), cex=0.5, col=4)
+
+# Örnek 14.25: magrittr paketini kurma ve yükleme
+if(!require(magrittr)){
+  install.packages("magrittr"); library(magrittr)
+
+# Örnek 14.26: iris verisetinde hiyerarşik kümeleme 3
+iris[,-5] %>% dist(method="euclidean") %>% 
+   hclust %>% plot(cex=0.5, col=4)
+
+# Örnek 14.27: compiler paketini kurma ve yükleme
+if(!(require(compiler))) {
+   install.packages("compiler") 
+   library("compiler")}
+
+# Örnek 14.28: varx fonksiyonunu çalıştırma
+set.seed(123)
+xtest <- rnorm(2e+05, 40, 10)
+varx(xtest)
+
+# Örnek 14.29: varx fonksiyonu hesaplama süresi
+system.time(varx(xtest))
+
+# Örnek 14.30: varx fonksiyonunun derlenmesi ve hesaplama süresi
+dvarx <- cmpfun(varx)
+system.time(dvarx(xtest))
+
+# Örnek 14.31: rbenchmark paketinin kurulması ve yüklenmesi
+if(!require(rbenchmark)){
+   install.packages("rbenchmark"); library("rbenchmark")}
+
+# Örnek 14.32: rbenchmark ile fonksiyon hız testi
+xtest <- rnorm(1e+03, 40, 10)
+benchmark(varx(xtest), dvarx(xtest), var(xtest), 
+   replications = 10, columns = c("test", "replications",
+   "elapsed", "relative", "user.self", "sys.self"))
+
+# Örnek 14.33: enableJIT ile derleme
+compiler::enableJIT(0)
+compiler::enableJIT(1)
+
+# Örnek 14.34: Sistem ortam değişkenlerini listeleme
+Sys.getenv()
+
+# Örnek 14.35: Sistem ortam değişkenlerini listeleme 2
+Sys.getenv(c("R_COMPILE_PKGS", "R_ENABLE_JIT"))
+
+# Örnek 14.36: Sistem ortam değişkenlerini ayarlama
+Sys.setenv(R_ENABLE_JIT = 1)
+
+# Örnek 14.37: Sistem ortam değişkeni değerini öğrenme
+Sys.getenv("R_ENABLE_JIT")
+
+# Örnek 14.38: Sistem ortam değişkeni değeri ayarlama ve öğrenme
+Sys.unsetenv("R_ENABLE_JIT")
+Sys.getenv("R_ENABLE_JIT")
+
+# Örnek 14.39: Otomatik derleme etkinleştirme
+if(!(require(compiler))) {
+   install.packages("compiler") 
+   library("compiler")}
+enableJIT(3)
+
+# Örnek 14.40: Çalışma klasörünü öğrenme
+Sys.getenv("HOME")
+
+# Örnek 14.41: .Renviron dosyasının oluşturma
+if(!file.exists("~/.Renviron")) file.create("~/.Renviron")   
+file.edit("~/.Renviron")
+
+# Örnek 14.42: Derleme işlemi ayarlarını öğrenme
+Sys.getenv(c("R_ENABLE_JIT", "R_COMPILE_PKGS"))
+
+# Örnek 14.43: .Renviron dosyasının okunması
+ortamdosya <- file.path(Sys.getenv("R_USER"), ".Renviron")
+ortamayarlar <- if (file.exists(ortamdosya))
+   readLines(ortamdosya) else character()
+ortamayarlar
+
+# Örnek 14.44: .Renviron dosyasına yeni ayar ekleme
+ortamayarlar <- unique(c(ortamayarlar, R_DEFAULT_PACKAGES=utils,grDevices,graphics,stats,methods'))
+writeLines(ortamayarlar, ortamdosya)
+
+# Örnek 14.45: .Renviron dosyasının içeriği
+ortamayarlar <- if (file.exists(ortamdosya)) readLines(ortamdosya) else character()
+ortamayarlar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

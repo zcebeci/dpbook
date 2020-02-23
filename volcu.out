@@ -1,0 +1,20 @@
+X veriseti
+   boy kilo   vki
+1 1.83   86 25.68
+2 1.84   95 28.06
+3 1.76   78 25.18
+4 1.62  105 40.01
+5 1.94   96 25.51
+6 1.60   52 20.31
+
+ Temel Ýstatistikler
+      boy             kilo             vki       
+ Min.   :1.570   Min.   : 49.00   Min.   :17.16  
+ 1st Qu.:1.635   1st Qu.: 56.50   1st Qu.:21.72  
+ Median :1.725   Median : 78.00   Median :25.04  
+ Mean   :1.730   Mean   : 76.00   Mean   :25.23  
+ 3rd Qu.:1.815   3rd Qu.: 92.75   3rd Qu.:25.64  
+ Max.   :1.940   Max.   :105.00   Max.   :40.01  
+
+Boy kareler toplamý
+[1] 30.0564
